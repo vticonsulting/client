@@ -1,0 +1,29 @@
+/* o-tabs */
+/* .o-tabs {
+}
+.o-tabs__nav {
+}
+.o-tabs__nav-item-wrapper {
+}
+.o-tabs .o-tabs__nav-item-default {
+  @apply text-gray-800 dark:text-white;
+}
+.o-tabs .o-tabs__nav-item-default--active {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.o-tabs__nav-item-boxed {
+  @apply text-gray-800 dark:text-white hover:bg-black;
+}
+
+.o-tabs__nav-item-boxed:hover:not(.o-tabs__nav-item-boxed--active) {
+  @apply text-gray-800 dark:text-white hover:bg-black;
+}
+.o-tabs__nav-item-boxed--active {
+  @apply text-gray-900 bg-white dark:bg-black dark:text-gray-100;
+}
+
+.o-tabs__content {
+}
+.o-tab-item__content {
+} */

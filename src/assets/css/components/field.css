@@ -1,0 +1,15 @@
+.field-label {
+  @apply block mb-2 text-sm font-bold text-gray-700;
+}
+
+.field-danger {
+  @apply text-red-500;
+}
+
+.field-label {
+  @apply block mb-2 text-sm font-bold text-main dark:text-main-dark;
+}
+
+.field-danger {
+  @apply text-red-500;
+}

@@ -1,0 +1,16 @@
+.radio {
+  @apply px-4 py-2 font-bold rounded text-main dark:text-main-dark;
+  min-width: 6rem;
+}
+
+.radio-check {
+  @apply hidden;
+}
+
+.radio-checked {
+  @apply text-highlight bg-highlight-background dark:text-highlight-dark dark:bg-highlight-background-dark;
+}
+
+.radio-label {
+  @apply w-full p-0 text-center;
+}

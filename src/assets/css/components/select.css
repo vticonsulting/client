@@ -1,0 +1,7 @@
+.o-ctrl-sel .o-sel {
+  @apply border-gray-400 rounded-md shadow-field focus:outline-none focus:ring-primary-500 focus:border-primary-500;
+}
+
+.o-ctrl-sel.o-ctrl-sel--expanded {
+  @apply w-full;
+}

@@ -1,0 +1,21 @@
+.step-divider {
+  background: #b5b5b5;
+}
+
+.steps-nav-item-active .step-marker {
+  @apply text-blue-500 border-blue-500;
+}
+
+.steps-nav-item-active .step-divider {
+  background: none;
+  @apply bg-blue-500;
+}
+
+.steps-nav-item-previous .step-marker {
+  @apply bg-blue-500;
+}
+
+.steps-nav-item-previous .step-divider {
+  background: none;
+  @apply bg-blue-500;
+}

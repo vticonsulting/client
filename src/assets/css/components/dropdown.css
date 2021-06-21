@@ -1,0 +1,28 @@
+.dropdown {
+  @apply relative inline-flex;
+}
+
+.dropdown-menu {
+  min-width: 12em;
+  @apply bg-white rounded-sm shadow-lg;
+}
+
+.dropdown-item {
+  @apply relative block py-2 no-underline cursor-pointer;
+}
+
+.dropdown-item-active {
+  @apply bg-blue-500;
+}
+
+.dropdown-menu {
+  @apply z-10 z-50 w-full rounded-sm shadow-lg bg-main-dark text-main dark:text-main-dark dark:bg-main;
+}
+
+.dropdown-item {
+  @apply w-full p-1 cursor-pointer text-main dark:text-main-dark dark:bg-main;
+}
+
+.dropdown-item-active {
+  @apply text-highlight bg-highlight-background dark:text-highlight-dark dark:bg-highlight-background-dark;
+}

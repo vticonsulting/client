@@ -1,0 +1,68 @@
+<template>
+  <section class="flex-1 h-full board">
+    <div class="flex flex-row items-start">
+      <BoardColumn
+        v-for="(column, $columnIndex) of board.columns"
+        :key="$columnIndex"
+        :column="column"
+        :columnIndex="$columnIndex"
+        :board="board"
+      />
+
+      <div class="flex column">
+        <input
+          type="text"
+          class="flex-grow p-2 mr-2"
+          placeholder="New Column Name"
+          v-model="newColumnName"
+          @keyup.enter="createColumn"
+        />
+      </div>
+    </div>
+
+    <div class="task-bg" v-if="isTaskOpen" @click.self="close">
+      <router-view />
+    </div>
+  </section>
+</template>
+
+<script>
+import {mapState} from 'vuex'
+import BoardColumn from '@/components/BoardColumn'
+
+export default {
+  components: {BoardColumn},
+  data() {
+    return {
+      newColumnName: '',
+    }
+  },
+  computed: {
+    ...mapState(['board']),
+    isTaskOpen() {
+      return this.$route.name === 'task'
+    },
+  },
+  methods: {
+    close() {
+      this.$router.push({name: 'board'})
+    },
+    createColumn() {
+      this.$store.commit('CREATE_COLUMN', {
+        name: this.newColumnName,
+      })
+      this.newColumnName = ''
+    },
+  },
+}
+</script>
+
+<style lang="css">
+.board {
+  @apply p-4 bg-teal-800 h-full overflow-auto;
+}
+.task-bg {
+  @apply inset-0 absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+</style>

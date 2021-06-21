@@ -1,0 +1,7 @@
+.checkbox {
+  @apply bg-blue-500 border-blue-500 appearance-none;
+}
+
+.checkbox-checked {
+  @apply bg-blue-500;
+}

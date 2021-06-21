@@ -1,0 +1,7 @@
+.switch {
+  @apply bg-black dark:bg-highlight-dark;
+}
+
+.switch-label {
+  @apply hidden;
+}
