@@ -1,6 +1,6 @@
 <template>
   <main class="flex-1 w-full bg-gray-100">
-    <BasePageHeading> {{ $t('advocates') }} </BasePageHeading>
+    <BasePageHeading>{{ $t('advocates') }}</BasePageHeading>
 
     <BaseBreadcrumb class="py-2" />
 
@@ -8,9 +8,7 @@
       <header v-if="false" class="mt-8">
         <OField grouped group-multiline>
           <div v-for="(column, index) in columnsVisible" :key="index">
-            <OCheckbox v-model="column.display">
-              {{ column.title }}
-            </OCheckbox>
+            <OCheckbox v-model="column.display">{{ column.title }}</OCheckbox>
           </div>
         </OField>
       </header>
@@ -40,15 +38,14 @@
             </div>
           </div>
           <div class="relative block mt-2 sm:mt-0">
-            <span class="absolute inset-y-0 left-0 flex items-center pl-2"
-              ><svg
-                viewBox="0 0 24 24"
-                class="w-4 h-4 text-gray-500 fill-current"
-              >
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              <svg viewBox="0 0 24 24" class="w-4 h-4 text-gray-500 fill-current">
                 <path
                   d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z"
-                ></path></svg></span
-            ><input
+                />
+              </svg>
+            </span>
+            <input
               placeholder="Search"
               class="block w-full py-2 pl-8 pr-6 text-sm text-gray-700 placeholder-gray-400 bg-white border border-b border-gray-400 rounded-l rounded-r appearance-none sm:rounded-l-none focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
             />
@@ -75,13 +72,9 @@
             sortable
             v-slot="props"
           >
-            <template v-if="showDetailIcon">
-              {{ props.row.firstName }}
-            </template>
+            <template v-if="showDetailIcon">{{ props.row.firstName }}</template>
             <template v-else>
-              <a @click="toggle(props.row)">
-                {{ props.row.firstName }}
-              </a>
+              <a @click="toggle(props.row)">{{ props.row.firstName }}</a>
             </template>
           </OTableColumn>
 
@@ -93,13 +86,9 @@
             sortable
             v-slot="props"
           >
-            <template v-if="showDetailIcon">
-              {{ props.row.lastName }}
-            </template>
+            <template v-if="showDetailIcon">{{ props.row.lastName }}</template>
             <template v-else>
-              <a @click="toggle(props.row)">
-                {{ props.row.lastName }}
-              </a>
+              <a @click="toggle(props.row)">{{ props.row.lastName }}</a>
             </template>
           </OTableColumn>
 
@@ -111,9 +100,7 @@
             sortable
             position="right"
             v-slot="props"
-          >
-            {{ props.row.sold }}
-          </OTableColumn>
+          >{{ props.row.sold }}</OTableColumn>
 
           <OTableColumn
             v-if="false"
@@ -123,9 +110,7 @@
             sortable
             position="right"
             v-slot="props"
-          >
-            {{ props.row.available }}
-          </OTableColumn>
+          >{{ props.row.available }}</OTableColumn>
 
           <OTableColumn
             v-if="false"
@@ -134,9 +119,7 @@
             position="right"
             v-slot="props"
           >
-            <span>
-              {{ Math.round((props.row.sold / props.row.available) * 100) }}%
-            </span>
+            <span>{{ Math.round((props.row.sold / props.row.available) * 100) }}%</span>
           </OTableColumn>
 
           <template slot="detail" slot-scope="props">
@@ -144,7 +127,7 @@
           </template>
 
           <template v-slot:empty>
-            <BaseBlankState> {{ $t('no_matching_results') }}</BaseBlankState>
+            <BaseBlankState>{{ $t('no_matching_results') }}</BaseBlankState>
           </template>
         </OTable>
       </article>
@@ -153,8 +136,8 @@
 </template>
 
 <script>
-import {watchEffect} from '@vue/composition-api'
-import PersonService from '@/services/PersonService'
+import { watchEffect } from '@vue/composition-api'
+import UserService from '@/services/UserService'
 
 export default {
   data() {
@@ -256,11 +239,11 @@ export default {
         },
       ],
       columnsVisible: {
-        firstName: {title: 'First Name', display: true},
-        lastName: {title: 'Last Name', display: true},
-        sold: {title: 'Stock Sold', display: true},
-        available: {title: 'Stock Available', display: true},
-        cleared: {title: 'Stock Cleared', display: true},
+        firstName: { title: 'First Name', display: true },
+        lastName: { title: 'Last Name', display: true },
+        sold: { title: 'Stock Sold', display: true },
+        available: { title: 'Stock Available', display: true },
+        cleared: { title: 'Stock Cleared', display: true },
       },
       showDetailIcon: true,
     }
@@ -268,13 +251,13 @@ export default {
   created() {
     watchEffect(() => {
       this.data = null
-      PersonService.getPeople(this.perPage, this.page)
+      UserService.getUsers(this.perPage, this.page)
         .then(response => {
           this.data = response.data
-          this.totalPeople = response.headers['x-total-count']
+          this.totalUsers = response.headers['x-total-count']
         })
         .catch(() => {
-          this.$router.push({name: 'network-error'})
+          this.$router.push({ name: 'network-error' })
         })
     })
   },

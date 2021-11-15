@@ -72,60 +72,18 @@ export default [
       import(/* webpackChunkName: "advocates" */ '@/views/advocates.vue'),
   },
   {
-    path: '/affiliates',
-    name: 'affiliates',
-    props: route => ({page: parseInt(route.query.page) || 1}),
-    component: () =>
-      import(/* webpackChunkName: "affiliates" */ '@/views/affiliates.vue'),
-  },
-  {
-    path: '/affiliates/:id',
-    name: 'affiliate-layout',
-    props: true,
-    component: () =>
-      import(
-        /* webpackChunkName: "affiliate-layout" */ '@/views/affiliate/layout.vue'
-      ),
-    children: [
-      {
-        path: '',
-        name: 'affiliate',
-        component: () =>
-          import(
-            /* webpackChunkName: "affiliate-details" */ '@/views/affiliate/details.vue'
-          ),
-      },
-      {
-        path: 'register',
-        name: 'affiliate-register',
-        component: () =>
-          import(
-            /* webpackChunkName: "affiliate-register" */ '@/views/affiliate/register.vue'
-          ),
-      },
-      {
-        path: 'edit',
-        name: 'affiliate-edit',
-        component: () =>
-          import(
-            /* webpackChunkName: "affiliate-edit" */ '@/views/affiliate/edit.vue'
-          ),
-      },
-    ],
-  },
-  {
-    path: '/affiliate/:afterAffiliate(.*)',
-    redirect: to => {
-      return {path: '/affiliates/' + to.params.afterAffiliate}
-    },
-  },
-  {
     path: '/announcements',
     name: 'announcements',
     component: () =>
       import(
         /* webpackChunkName: "announcements" */ '@/views/announcements.vue'
       ),
+  },
+  {
+    path: '/billing',
+    name: 'billing',
+    component: () =>
+      import(/* webpackChunkName: "billing" */ '@/views/billing.vue'),
   },
   {
     path: '/board',
@@ -146,6 +104,54 @@ export default [
       import(/* webpackChunkName: "calendar" */ '@/views/calendar.vue'),
   },
   {
+    path: '/carriers',
+    name: 'carriers',
+    props: route => ({page: parseInt(route.query.page) || 1}),
+    component: () =>
+      import(/* webpackChunkName: "carriers" */ '@/views/carriers.vue'),
+  },
+  {
+    path: '/carriers/:id',
+    name: 'carrier-layout',
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "carrier-layout" */ '@/views/carrier/layout.vue'
+      ),
+    children: [
+      {
+        path: '',
+        name: 'carrier',
+        component: () =>
+          import(
+            /* webpackChunkName: "carrier-details" */ '@/views/carrier/details.vue'
+          ),
+      },
+      {
+        path: 'register',
+        name: 'carrier-register',
+        component: () =>
+          import(
+            /* webpackChunkName: "carrier-register" */ '@/views/carrier/register.vue'
+          ),
+      },
+      {
+        path: 'edit',
+        name: 'carrier-edit',
+        component: () =>
+          import(
+            /* webpackChunkName: "carrier-edit" */ '@/views/carrier/edit.vue'
+          ),
+      },
+    ],
+  },
+  {
+    path: '/carrier/:afterCarrier(.*)',
+    redirect: to => {
+      return {path: '/carriers/' + to.params.afterCarrier}
+    },
+  },
+  {
     path: '/charts',
     name: 'charts',
     component: () =>
@@ -158,10 +164,22 @@ export default [
       import(/* webpackChunkName: "clients" */ '@/views/clients.vue'),
   },
   {
+    path: '/composition',
+    name: 'composition',
+    component: () =>
+      import(/* webpackChunkName: "composition" */ '@/views/composition.vue'),
+  },
+  {
     path: '/courses',
     name: 'courses',
     component: () =>
       import(/* webpackChunkName: "courses" */ '@/views/courses.vue'),
+  },
+  {
+    path: '/customers',
+    name: 'customers',
+    component: () =>
+      import(/* webpackChunkName: "customers" */ '@/views/customers/index.vue'),
   },
   {
     path: '/demo',
@@ -220,35 +238,17 @@ export default [
     component: () =>
       import(/* webpackChunkName: "example" */ '@/views/example.vue'),
   },
-  // {
-  //   path: '/messsages',
-  //   name: 'messages',
-  //   component: Messages,
-  //   props: route => ({page: parseInt(route.query.page) || 1}),
-  // },
-  // {
-  //   path: '/messages/:id',
-  //   name: 'message-layout',
-  //   props: true,
-  //   component: MessageLayout,
-  //   children: [
-  //     {
-  //       path: '',
-  //       name: 'message',
-  //       component: MessageDetails,
-  //     },
-  //     {
-  //       path: 'register',
-  //       name: 'message-register',
-  //       component: MessageRegister,
-  //     },
-  //     {
-  //       path: 'edit',
-  //       name: 'message-edit',
-  //       component: MessageEdit,
-  //     },
-  //   ],
-  // },
+  {
+    path: '/examples/form',
+    name: 'example-form',
+    component: () =>
+      import(/* webpackChunkName: "examples" */ '@/views/examples/form.vue'),
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: () => import(/* webpackChunkName: "faq" */ '@/views/faq.vue'),
+  },
   {
     path: '/form',
     name: 'form',
@@ -295,57 +295,18 @@ export default [
   {
     path: '/people',
     name: 'people',
+    component: () =>
+      import(/* webpackChunkName: "people" */ '@/views/people.vue'),
     props: route => ({page: parseInt(route.query.page) || 1}),
-    component: () =>
-      import(/* webpackChunkName: "people" */ '@/views/people/index.vue'),
   },
   {
-    path: '/people/:id',
-    name: 'person-layout',
-    props: true,
+    path: '/products',
+    name: 'products',
     component: () =>
-      import(/* webpackChunkName: "people" */ '@/views/people/_id.vue'),
-    children: [
-      {
-        path: '',
-        name: 'person-id',
-        props: true,
-        component: () =>
-          import(
-            /* webpackChunkName: "people" */ '@/views/people/_id/index.vue'
-          ),
-      },
-      {
-        path: 'register',
-        name: 'person-id-register',
-        component: () =>
-          import(
-            /* webpackChunkName: "people" */ '@/views/people/_id/register.vue'
-          ),
-      },
-      {
-        path: 'create',
-        name: 'person-id-create',
-        component: () =>
-          import(
-            /* webpackChunkName: "people" */ '@/views/people/_id/create.vue'
-          ),
-      },
-      {
-        path: 'edit',
-        name: 'person-id-edit',
-        component: () =>
-          import(
-            /* webpackChunkName: "people" */ '@/views/people/_id/edit.vue'
-          ),
-      },
-    ],
-  },
-  {
-    path: '/person/:afterPerson(.*)',
-    redirect: to => {
-      return {path: '/people/' + to.params.afterPerson}
-    },
+      import(
+        /* webpackChunkName: "products" */ '@/views/products/products.vue'
+      ),
+    props: route => ({page: parseInt(route.query.page) || 1}),
   },
   {
     path: '/profile',
@@ -354,10 +315,25 @@ export default [
       import(/* webpackChunkName: "profile" */ '@/views/profile.vue'),
   },
   {
-    path: '/resources',
-    name: 'resources',
+    path: '/projects',
+    name: 'projects',
     component: () =>
-      import(/* webpackChunkName: "resources" */ '@/views/resources.vue'),
+      import(/* webpackChunkName: "projects" */ '@/views/projects/index.vue'),
+  },
+
+  {
+    path: '/services',
+    name: 'services',
+    component: () =>
+      import(/* webpackChunkName: "services" */ '@/views/services.vue'),
+    props: route => ({page: parseInt(route.query.page) || 1}),
+  },
+
+  {
+    path: '/reports',
+    name: 'reports',
+    component: () =>
+      import(/* webpackChunkName: "reports" */ '@/views/reports.vue'),
     props: route => ({page: parseInt(route.query.page) || 1}),
   },
   {
@@ -365,6 +341,13 @@ export default [
     name: 'requests',
     component: () =>
       import(/* webpackChunkName: "requests" */ '@/views/requests.vue'),
+    props: route => ({page: parseInt(route.query.page) || 1}),
+  },
+  {
+    path: '/resources',
+    name: 'resources',
+    component: () =>
+      import(/* webpackChunkName: "resources" */ '@/views/resources.vue'),
     props: route => ({page: parseInt(route.query.page) || 1}),
   },
   {
@@ -396,22 +379,15 @@ export default [
     props: route => ({page: parseInt(route.query.page) || 1}),
   },
   {
-    path: '/todos',
-    name: 'todos',
-    component: () => import(/* webpackChunkName: "todos" */ '@/views/todos'),
-    props: route => ({page: parseInt(route.query.page) || 1}),
-  },
-  //   {
-  //     path: '/person',
-  //     name: 'person',
-  //     component: () =>
-  //       import(/* webpackChunkName: "person" */ '@/views/person.vue'),
-  //     props: route => ({page: parseInt(route.query.page) || 1}),
-  //   },
-  {
     path: '/team',
     name: 'team',
     component: () => import(/* webpackChunkName: "team" */ '@/views/team.vue'),
+    props: route => ({page: parseInt(route.query.page) || 1}),
+  },
+  {
+    path: '/todos',
+    name: 'todos',
+    component: () => import(/* webpackChunkName: "todos" */ '@/views/todos'),
     props: route => ({page: parseInt(route.query.page) || 1}),
   },
   {
@@ -420,6 +396,63 @@ export default [
     component: () =>
       import(/* webpackChunkName: "training" */ '@/views/training.vue'),
     props: route => ({page: parseInt(route.query.page) || 1}),
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => import(/* webpackChunkName: "user" */ '@/views/user.vue'),
+    props: route => ({page: parseInt(route.query.page) || 1}),
+  },
+  {
+    path: '/users',
+    name: 'users',
+    props: route => ({page: parseInt(route.query.page) || 1}),
+    component: () =>
+      import(/* webpackChunkName: "users" */ '@/views/users/index.vue'),
+  },
+  {
+    path: '/users/:id',
+    name: 'user-layout',
+    props: true,
+    component: () =>
+      import(/* webpackChunkName: "users" */ '@/views/users/_id.vue'),
+    children: [
+      {
+        path: '',
+        name: 'user-id',
+        props: true,
+        component: () =>
+          import(/* webpackChunkName: "users" */ '@/views/users/_id/index.vue'),
+      },
+      {
+        path: 'register',
+        name: 'user-id-register',
+        component: () =>
+          import(
+            /* webpackChunkName: "users" */ '@/views/users/_id/register.vue'
+          ),
+      },
+      {
+        path: 'create',
+        name: 'user-id-create',
+        component: () =>
+          import(
+            /* webpackChunkName: "users" */ '@/views/users/_id/create.vue'
+          ),
+      },
+      {
+        path: 'edit',
+        name: 'user-id-edit',
+        component: () =>
+          import(/* webpackChunkName: "users" */ '@/views/users/_id/edit.vue'),
+      },
+    ],
+  },
+  {
+    path: '/user/:afterPerson(.*)',
+    redirect: to => {
+      return {path: '/users/' + to.params.afterPerson}
+    },
   },
   {
     path: '/:catchAll(.*)',

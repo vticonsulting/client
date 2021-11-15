@@ -1,4 +1,13 @@
 /* o-tabs */
+
+.tabs .header-item-default {
+  @apply focus:outline-none;
+}
+
+.tabs .header-item-default.is-active-default {
+  @apply font-bold text-primary-500;
+}
+
 /* .o-tabs {
 }
 .o-tabs__nav {

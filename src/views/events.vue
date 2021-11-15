@@ -8,51 +8,27 @@
         <div class="pagination">
           <RouterLink
             id="page-prev"
-            :to="{name: 'events', query: {page: page - 1}}"
+            :to="{ name: 'events', query: { page: page - 1 } }"
             rel="prev"
             v-if="page != 1"
-          >
-            &#60; {{ $t('previous') }}
-          </RouterLink>
+          >&#60; {{ $t('previous') }}</RouterLink>
 
           <RouterLink
             id="page-next"
-            :to="{name: 'events', query: {page: page + 1}}"
+            :to="{ name: 'events', query: { page: page + 1 } }"
             rel="next"
             v-if="hasNextPage"
-          >
-            {{ $t('next') }} &#62;
-          </RouterLink>
+          >{{ $t('next') }} &#62;</RouterLink>
         </div>
       </div>
     </section>
-
-    <div>
-      <ul>
-        <li><b>Event</b></li>
-        <li><a href="#">Edit</a></li>
-        <li><button>Delete</button></li>
-        <li><b>RSVPs</b></li>
-        <li><a href="#">Test RSVP</a></li>
-        <li><button>Copy RSVP Link</button></li>
-        <li><a href="#">View RSVPs</a></li>
-        <li><button>Msg RVPSs</button></li>
-        <li><b>Responses</b></li>
-        <li><a href="#">Test Response Card</a></li>
-        <li><button>Copy Event Response Link</button></li>
-        <li><a href="#">View Non-Responders</a></li>
-        <li><a href="#">View Responders</a></li>
-        <li><button>Msg Responders</button></li>
-        <li><a href="#">View No Shows</a></li>
-      </ul>
-    </div>
   </main>
 </template>
 
 <script>
+import { watchEffect } from '@vue/composition-api'
 import EventCard from '@/components/EventCard'
 import EventService from '@/services/EventService'
-import {watchEffect} from '@vue/composition-api'
 
 export default {
   name: 'EventsView',
@@ -75,7 +51,7 @@ export default {
           this.totalEvents = response.headers['x-total-count']
         })
         .catch(() => {
-          this.$router.push({name: 'NetworkError'})
+          this.$router.push({ name: 'NetworkError' })
         })
     })
   },

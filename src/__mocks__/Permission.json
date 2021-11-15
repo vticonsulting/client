@@ -1,0 +1,373 @@
+[
+  {
+    "Id": 1,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "Administrator",
+    "Order": 99
+  },
+  {
+    "Id": 2,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "View Projects List",
+    "Order": 99
+  },
+  {
+    "Id": 3,
+    "GroupName": null,
+    "IsPage": "1",
+    "Name": "View SVT Availability Menu",
+    "Order": 99
+  },
+  {
+    "Id": 4,
+    "GroupName": "Customers",
+    "IsPage": "1",
+    "Name": "View Customers Menu",
+    "Order": 99
+  },
+  {
+    "Id": 5,
+    "GroupName": null,
+    "IsPage": "1",
+    "Name": "View Billing Menu",
+    "Order": 99
+  },
+  {
+    "Id": 6,
+    "GroupName": "Users",
+    "IsPage": "1",
+    "Name": "View Users Menu",
+    "Order": 99
+  },
+  {
+    "Id": 7,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "View Regions Menu",
+    "Order": 99
+  },
+  {
+    "Id": 8,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "Export Projects",
+    "Order": 99
+  },
+  {
+    "Id": 9,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Billing Price",
+    "Order": 99
+  },
+  {
+    "Id": 10,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "View Announcements",
+    "Order": 99
+  },
+  {
+    "Id": 11,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Past Due Appointments",
+    "Order": 99
+  },
+  {
+    "Id": 12,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Todays Appointments",
+    "Order": 99
+  },
+  {
+    "Id": 13,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Tomorrows Appointments",
+    "Order": 99
+  },
+  {
+    "Id": 14,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Recent Activity",
+    "Order": 99
+  },
+  {
+    "Id": 15,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Projects By Status",
+    "Order": 99
+  },
+  {
+    "Id": 16,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Service Billing",
+    "Order": 99
+  },
+  {
+    "Id": 17,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View AUG Projects Grid",
+    "Order": 99
+  },
+  {
+    "Id": 18,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Projects In My Region",
+    "Order": 99
+  },
+  {
+    "Id": 19,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "View Service Types",
+    "Order": 99
+  },
+  {
+    "Id": 20,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "Add Project",
+    "Order": 99
+  },
+  {
+    "Id": 21,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "Add Edit Todays Message",
+    "Order": 99
+  },
+  {
+    "Id": 22,
+    "GroupName": "Reports",
+    "IsPage": "1",
+    "Name": "Add Edit Reports",
+    "Order": 99
+  },
+  {
+    "Id": 23,
+    "GroupName": null,
+    "IsPage": "1",
+    "Name": "View Super Dashboard",
+    "Order": 99
+  },
+  {
+    "Id": 24,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "View Closed Projects",
+    "Order": 99
+  },
+  {
+    "Id": 25,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "Project Assignment",
+    "Order": 99
+  },
+  {
+    "Id": 26,
+    "GroupName": "Customers",
+    "IsPage": "1",
+    "Name": "Add Customer",
+    "Order": 99
+  },
+  {
+    "Id": 27,
+    "GroupName": "Customers",
+    "IsPage": "1",
+    "Name": "Add Business Unit",
+    "Order": 99
+  },
+  {
+    "Id": 28,
+    "GroupName": "Users",
+    "IsPage": "1",
+    "Name": "Bulk Assign",
+    "Order": 99
+  },
+  {
+    "Id": 29,
+    "GroupName": "Users",
+    "IsPage": "1",
+    "Name": "Add Application User",
+    "Order": 99
+  },
+  {
+    "Id": 30,
+    "GroupName": "Users",
+    "IsPage": "1",
+    "Name": "Add Service Tech",
+    "Order": 99
+  },
+  {
+    "Id": 31,
+    "GroupName": "Users",
+    "IsPage": "1",
+    "Name": "Add Insurance Adjuster",
+    "Order": 99
+  },
+  {
+    "Id": 32,
+    "GroupName": "Reports",
+    "IsPage": "1",
+    "Name": "Report List",
+    "Order": 99
+  },
+  {
+    "Id": 34,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "Add Announcement",
+    "Order": 99
+  },
+  {
+    "Id": 36,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "Add Service Area",
+    "Order": 99
+  },
+  {
+    "Id": 37,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "Edit Permissions",
+    "Order": 99
+  },
+  {
+    "Id": 38,
+    "GroupName": null,
+    "IsPage": "1",
+    "Name": "Calendar",
+    "Order": 99
+  },
+  {
+    "Id": 39,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "Add Service Type",
+    "Order": 99
+  },
+  {
+    "Id": 40,
+    "GroupName": "Reports",
+    "IsPage": "1",
+    "Name": "User Report List",
+    "Order": 99
+  },
+  {
+    "Id": 41,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "View Billing Info",
+    "Order": 99
+  },
+  {
+    "Id": 42,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "External Claims List",
+    "Order": 99
+  },
+  {
+    "Id": 43,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "External Claims Details",
+    "Order": 99
+  },
+  {
+    "Id": 44,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "Upload Project",
+    "Order": 99
+  },
+  {
+    "Id": 45,
+    "GroupName": null,
+    "IsPage": "0",
+    "Name": "Pending Claims List",
+    "Order": 99
+  },
+  {
+    "Id": 46,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "Manage FAQ List",
+    "Order": 99
+  },
+  {
+    "Id": 47,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "View FAQ List",
+    "Order": 99
+  },
+  {
+    "Id": 48,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "View Archived Projects",
+    "Order": 99
+  },
+  {
+    "Id": 49,
+    "GroupName": "Projects",
+    "IsPage": "0",
+    "Name": "View Project Comments",
+    "Order": 99
+  },
+  {
+    "Id": 50,
+    "GroupName": "Projects",
+    "IsPage": "0",
+    "Name": "Add Edit Asset",
+    "Order": 99
+  },
+  {
+    "Id": 51,
+    "GroupName": "Settings",
+    "IsPage": "1",
+    "Name": "View Add Edit IA Firm",
+    "Order": 99
+  },
+  {
+    "Id": 52,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "View EV Projects",
+    "Order": 99
+  },
+  {
+    "Id": 53,
+    "GroupName": "Dialer",
+    "IsPage": "1",
+    "Name": "View Call Scripts",
+    "Order": 99
+  },
+  {
+    "Id": 54,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "Edit Project",
+    "Order": 99
+  },
+  {
+    "Id": 55,
+    "GroupName": "Projects",
+    "IsPage": "1",
+    "Name": "Process Pending Projects",
+    "Order": 99
+  }
+]

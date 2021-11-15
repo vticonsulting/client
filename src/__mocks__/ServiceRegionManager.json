@@ -1,0 +1,374 @@
+[
+  {
+    "ServiceRegionId": 11,
+    "UserId": 3875,
+    "CreatedBy": 124,
+    "CreatedOn": "2015-07-14 08:28:20.317"
+  },
+  {
+    "ServiceRegionId": 11,
+    "UserId": 6237,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:07:48.813"
+  },
+  {
+    "ServiceRegionId": 11,
+    "UserId": 10735,
+    "CreatedBy": 3332,
+    "CreatedOn": "2018-03-26 14:14:35.920"
+  },
+  {
+    "ServiceRegionId": 11,
+    "UserId": 11629,
+    "CreatedBy": 3332,
+    "CreatedOn": "2018-01-26 15:50:09.370"
+  },
+  {
+    "ServiceRegionId": 12,
+    "UserId": 175,
+    "CreatedBy": 124,
+    "CreatedOn": "2016-09-02 09:53:35.827"
+  },
+  {
+    "ServiceRegionId": 12,
+    "UserId": 181,
+    "CreatedBy": 43444,
+    "CreatedOn": "2019-09-09 11:23:06.157"
+  },
+  {
+    "ServiceRegionId": 12,
+    "UserId": 227,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:07:05.097"
+  },
+  {
+    "ServiceRegionId": 12,
+    "UserId": 4020,
+    "CreatedBy": 43444,
+    "CreatedOn": "2019-09-09 15:18:01.227"
+  },
+  {
+    "ServiceRegionId": 12,
+    "UserId": 11629,
+    "CreatedBy": 3332,
+    "CreatedOn": "2019-02-13 15:15:17.347"
+  },
+  {
+    "ServiceRegionId": 13,
+    "UserId": 3875,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-02-26 10:14:43.457"
+  },
+  {
+    "ServiceRegionId": 13,
+    "UserId": 4020,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-02 08:19:23.003"
+  },
+  {
+    "ServiceRegionId": 13,
+    "UserId": 9616,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:09:32.833"
+  },
+  {
+    "ServiceRegionId": 13,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:06:05.777"
+  },
+  {
+    "ServiceRegionId": 14,
+    "UserId": 175,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-02-26 10:16:52.560"
+  },
+  {
+    "ServiceRegionId": 14,
+    "UserId": 215,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:08:13.387"
+  },
+  {
+    "ServiceRegionId": 14,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:06:58.580"
+  },
+  {
+    "ServiceRegionId": 15,
+    "UserId": 235,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:13:43.900"
+  },
+  {
+    "ServiceRegionId": 15,
+    "UserId": 5712,
+    "CreatedBy": 12359,
+    "CreatedOn": "2018-08-15 14:15:57.133"
+  },
+  {
+    "ServiceRegionId": 15,
+    "UserId": 11629,
+    "CreatedBy": 3332,
+    "CreatedOn": "2018-11-01 15:50:06.970"
+  },
+  {
+    "ServiceRegionId": 15,
+    "UserId": 29341,
+    "CreatedBy": 10675,
+    "CreatedOn": "2018-02-13 11:38:08.623"
+  },
+  {
+    "ServiceRegionId": 16,
+    "UserId": 7316,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:14:25.460"
+  },
+  {
+    "ServiceRegionId": 16,
+    "UserId": 10035,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-10-16 23:05:33.003"
+  },
+  {
+    "ServiceRegionId": 16,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:06:22.160"
+  },
+  {
+    "ServiceRegionId": 17,
+    "UserId": 3870,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:03:26.717"
+  },
+  {
+    "ServiceRegionId": 17,
+    "UserId": 3875,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-02-26 10:15:23.880"
+  },
+  {
+    "ServiceRegionId": 17,
+    "UserId": 6735,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-21 15:45:23.880"
+  },
+  {
+    "ServiceRegionId": 17,
+    "UserId": 11629,
+    "CreatedBy": 3332,
+    "CreatedOn": "2018-12-20 15:16:13.803"
+  },
+  {
+    "ServiceRegionId": 18,
+    "UserId": 3875,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-02-26 10:15:36.403"
+  },
+  {
+    "ServiceRegionId": 18,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:08:24.123"
+  },
+  {
+    "ServiceRegionId": 18,
+    "UserId": 14179,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:15:01.663"
+  },
+  {
+    "ServiceRegionId": 19,
+    "UserId": 175,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-02-26 10:16:12.700"
+  },
+  {
+    "ServiceRegionId": 19,
+    "UserId": 181,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-07-17 12:30:36.793"
+  },
+  {
+    "ServiceRegionId": 19,
+    "UserId": 221,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:08:48.957"
+  },
+  {
+    "ServiceRegionId": 19,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:07:57.867"
+  },
+  {
+    "ServiceRegionId": 20,
+    "UserId": 3086,
+    "CreatedBy": 124,
+    "CreatedOn": "2015-07-14 02:06:34.533"
+  },
+  {
+    "ServiceRegionId": 21,
+    "UserId": 3086,
+    "CreatedBy": 124,
+    "CreatedOn": "2015-07-14 02:06:34.533"
+  },
+  {
+    "ServiceRegionId": 22,
+    "UserId": 7316,
+    "CreatedBy": 41217,
+    "CreatedOn": "2019-06-17 17:12:57.887"
+  },
+  {
+    "ServiceRegionId": 24,
+    "UserId": 175,
+    "CreatedBy": 124,
+    "CreatedOn": "2018-02-26 10:16:26.907"
+  },
+  {
+    "ServiceRegionId": 24,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:07:44.377"
+  },
+  {
+    "ServiceRegionId": 24,
+    "UserId": 15973,
+    "CreatedBy": 13494,
+    "CreatedOn": "2017-02-13 11:21:44.317"
+  },
+  {
+    "ServiceRegionId": 26,
+    "UserId": 3875,
+    "CreatedBy": 12359,
+    "CreatedOn": "2018-12-28 08:34:30.157"
+  },
+  {
+    "ServiceRegionId": 26,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:05:45.760"
+  },
+  {
+    "ServiceRegionId": 27,
+    "UserId": 6754,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-05-30 16:27:59.683"
+  },
+  {
+    "ServiceRegionId": 27,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:07:26.217"
+  },
+  {
+    "ServiceRegionId": 27,
+    "UserId": 21268,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:13:01.297"
+  },
+  {
+    "ServiceRegionId": 27,
+    "UserId": 29341,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-08-21 18:54:41.057"
+  },
+  {
+    "ServiceRegionId": 28,
+    "UserId": 175,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-03-05 10:33:53.813"
+  },
+  {
+    "ServiceRegionId": 28,
+    "UserId": 3854,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:10:17.383"
+  },
+  {
+    "ServiceRegionId": 28,
+    "UserId": 4020,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-02 08:19:37.657"
+  },
+  {
+    "ServiceRegionId": 28,
+    "UserId": 11629,
+    "CreatedBy": 22874,
+    "CreatedOn": "2019-03-11 14:09:08.860"
+  },
+  {
+    "ServiceRegionId": 29,
+    "UserId": 29341,
+    "CreatedBy": 10675,
+    "CreatedOn": "2018-02-15 09:38:22.727"
+  },
+  {
+    "ServiceRegionId": 30,
+    "UserId": 5712,
+    "CreatedBy": 124,
+    "CreatedOn": "2019-09-01 17:13:55.537"
+  },
+  {
+    "ServiceRegionId": 30,
+    "UserId": 11629,
+    "CreatedBy": 3332,
+    "CreatedOn": "2018-11-06 10:33:56.780"
+  },
+  {
+    "ServiceRegionId": 30,
+    "UserId": 29341,
+    "CreatedBy": 12359,
+    "CreatedOn": "2018-02-26 18:41:02.360"
+  },
+  {
+    "ServiceRegionId": 34,
+    "UserId": 3875,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-12 09:45:30.837"
+  },
+  {
+    "ServiceRegionId": 34,
+    "UserId": 6237,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-12 09:45:30.837"
+  },
+  {
+    "ServiceRegionId": 34,
+    "UserId": 10735,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-12 09:45:30.837"
+  },
+  {
+    "ServiceRegionId": 34,
+    "UserId": 11629,
+    "CreatedBy": 3332,
+    "CreatedOn": "2019-03-12 14:58:18.573"
+  },
+  {
+    "ServiceRegionId": 35,
+    "UserId": 11629,
+    "CreatedBy": 43444,
+    "CreatedOn": "2019-08-12 07:46:18.633"
+  },
+  {
+    "ServiceRegionId": 35,
+    "UserId": 21062,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-12 13:53:52.517"
+  },
+  {
+    "ServiceRegionId": 35,
+    "UserId": 21268,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-12 13:53:52.517"
+  },
+  {
+    "ServiceRegionId": 35,
+    "UserId": 29341,
+    "CreatedBy": 12359,
+    "CreatedOn": "2019-03-12 13:53:52.517"
+  }
+]

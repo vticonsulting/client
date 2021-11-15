@@ -1,19 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-// const { getColors } = require('theme-colors')
-
 const tailWindColors = require('tailwindcss/colors')
-const defaultColors = require('./config/__DEFAULT__/colors')
-const boosterColors = require('./config/booster/colors')
-const emaColors = require('./config/ema/colors')
-const gaSpsColors = require('./config/ga_sps_org/colors')
-const promiseServesColors = require('./config/promise_serves/colors')
+const setupColors = require('./setup/colors')
+
+// const { colors } = require('./hancock.config')
 
 const colors = {
-  ...defaultColors,
-  ...boosterColors,
-  ...emaColors,
-  ...gaSpsColors,
-  ...promiseServesColors,
+  ...setupColors,
   ...tailWindColors,
 }
 
@@ -61,74 +53,37 @@ module.exports = {
         ],
       },
       colors: {
-        // primary: colors.burgundy,
-        // primary: colors.blueGray,
-        // primary: colors.jacarta,
-        // primary: colors.studio,
-        // primary: colors.paprika,
-        // primary: colors.emerald,
-        // primary: colors.oliveGreen,
-        primary: colors['flame-pea'],
+        brand: colors['torea-bay'],
 
-        // secondary: colors['silver-chalice'],
-        // secondary: colors.coolGray,
-        // secondary: colors['clay-creek'],
-        // secondary: colors['gold-tips'],
-        // secondary: colors['tory-blue'],
-        // secondary: colors['cornflower-blue'],
-        // secondary: colors.mineShaft,
-        secondary: colors.deepTeal,
+        primary: colors['san-juan'],
+        secondary: colors.hoki,
+        tertiary: colors['medium-sea-green'],
 
-        // tertiary: colors['hokey-pokey'],
-        // tertiary: colors.trueGray,
-        // tertiary: colors.mineShaft,
-        // tertiary: colors['deep-sea'],
-        // tertiary: colors['deep-sea'],
-        // tertiary: colors['picton-blue'],
-        // tertiary: colors['yellow-orange'],
-        // tertiary: colors.candlelight,
-        tertiary: colors.peachSchnapps,
-
-        orange: colors.amber,
-        teal: colors.teal,
-
-        rose: colors.rose,
-        lime: colors.lime,
-        'light-blue': colors.lightBlue,
-
-        // danger: 'var(--color-danger)',
-        // warning: 'var(--color-warning)',
-        // success: 'var(--color-success)',
-        // info: 'var(--color-info)',
+        accent: colors.tango,
 
         danger: colors.monza,
         warning: colors['sea-buckthorn'],
         success: colors.malachite,
         info: colors.scooter,
+        neutral: colors.blueGray,
 
-        email: 'var(--color-emailer)',
-        emailer: 'var(--color-emailer)',
-        sms: 'var(--color-sms)',
-        copy: 'var(--color-copy)',
-        brand: '#1B2A60',
-        'booster-blue': '#003E7E',
-        'booster-red': '#B3282D',
-        bootstrap: '#7952B3',
-        buefy: '#7957D5',
-        bulma: '#00D1B2',
-        codeigniter: '#EE4323',
-        codepen: '#000000',
-        ema: '#202d56',
-        facebook: '#3b5998',
-        github: '#181717',
-        instagram: '#E4405F',
-        laravel: '#FF2D20',
-        linkedin: '#0077b5',
-        php: '#777BB4',
-        promiseserves: '#95ba3d',
-        ruby: '#CC342D',
-        twitter: '#1da1f2',
-        vue: '#4FC08D',
+        orange: colors.amber,
+        teal: colors.teal,
+        rose: colors.rose,
+        lime: colors.lime,
+        'light-blue': colors.lightBlue,
+
+        'series-01': '#3eff00',
+        'series-02': '#b0ff00',
+        'series-03': '#FFfa00',
+        'series-04': '#FFdc00',
+        'series-05': '#FFbe00',
+        'series-06': '#FFa000',
+        'series-07': '#FF8200',
+        'series-08': '#FF6400',
+        'series-09': '#FF4600',
+        'series-10': '#FF2800',
+
         'temperture-01': '#3eff00',
         'temperture-02': '#b0ff00',
         'temperture-03': '#FFfa00',
@@ -139,6 +94,55 @@ module.exports = {
         'temperture-08': '#FF6400',
         'temperture-09': '#FF4600',
         'temperture-10': '#FF2800',
+
+        bootstrap: '#7952B3',
+        facebook: '#3b5998',
+        github: '#181717',
+        instagram: '#E4405F',
+        laravel: '#FF2D20',
+        linkedin: '#0077b5',
+        twitter: '#1da1f2',
+        vue: '#4FC08D',
+
+        // 'primary': {
+        //   DEFAULT: 'var(--color-primary)',
+        //   50: 'var(--color-primary-50)',
+        //   100: 'var(--color-primary-100)',
+        //   200: 'var(--color-primary-200)',
+        //   300: 'var(--color-primary-300)',
+        //   400: 'var(--color-primary-400)',
+        //   500: 'var(--color-primary-500)',
+        //   600: 'var(--color-primary-600)',
+        //   700: 'var(--color-primary-700)',
+        //   800: 'var(--color-primary-800)',
+        //   900: 'var(--color-primary-900)',
+        // },
+        // 'secondary': {
+        //   DEFAULT: 'var(--color-secondary)',
+        //   50: 'var(--color-secondary-50)',
+        //   100: 'var(--color-secondary-100)',
+        //   200: 'var(--color-secondary-200)',
+        //   300: 'var(--color-secondary-300)',
+        //   400: 'var(--color-secondary-400)',
+        //   500: 'var(--color-secondary-500)',
+        //   600: 'var(--color-secondary-600)',
+        //   700: 'var(--color-secondary-700)',
+        //   800: 'var(--color-secondary-800)',
+        //   900: 'var(--color-secondary-900)',
+        // },
+        // 'tertiary': {
+        //   DEFAULT: 'var(--color-tertiary)',
+        //   50: 'var(--color-tertiary-50)',
+        //   100: 'var(--color-tertiary-100)',
+        //   200: 'var(--color-tertiary-200)',
+        //   300: 'var(--color-tertiary-300)',
+        //   400: 'var(--color-tertiary-400)',
+        //   500: 'var(--color-tertiary-500)',
+        //   600: 'var(--color-tertiary-600)',
+        //   700: 'var(--color-tertiary-700)',
+        //   800: 'var(--color-tertiary-800)',
+        //   900: 'var(--color-tertiary-900)',
+        // },
         nuxt: {
           gray: '#243746',
           lightgreen: '#41B38A',
@@ -148,10 +152,6 @@ module.exports = {
           DEFAULT: colors.gray[700],
           dark: '#ffffff',
         },
-        // primary: {
-        //   DEFAULT: '#1fb6ff',
-        //   dark: '#ffffff',
-        // },
         highlight: {
           DEFAULT: colors.red[700],
           dark: colors.violet[800],
@@ -161,16 +161,6 @@ module.exports = {
           dark: '#1fb6ff',
         },
       },
-      fill: theme => ({
-        'nuxt-gray': theme('colors.nuxt.gray'),
-        'nuxt-lightgreen': theme('colors.nuxt.lightgreen'),
-        'nuxt-green': theme('colors.nuxt.green'),
-      }),
-      stroke: theme => ({
-        'nuxt-gray': theme('colors.nuxt.gray'),
-        'nuxt-lightgreen': theme('colors.nuxt.lightgreen'),
-        'nuxt-green': theme('colors.nuxt.green'),
-      }),
       animation: {
         wiggle: 'wiggle 1s infinite',
       },
@@ -280,8 +270,8 @@ module.exports = {
     borderWidth: ['responsive', 'first', 'last', 'hover', 'focus'],
     opacity: ['responsive', 'hover', 'focus', 'disabled'],
     outline: ['focus'],
-    animation: ({after}) => after(['motion-safe', 'motion-reduce']),
-    transitionProperty: ({after}) => after(['motion-reduce']),
+    animation: ({ after }) => after(['motion-safe', 'motion-reduce']),
+    transitionProperty: ({ after }) => after(['motion-reduce']),
     // typography: ['responsive', 'dark'],
     extend: {
       typography: ['dark'],

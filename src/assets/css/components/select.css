@@ -1,7 +1,7 @@
-.o-ctrl-sel .o-sel {
-  @apply border-gray-400 rounded-md shadow-field focus:outline-none focus:ring-primary-500 focus:border-primary-500;
+.select-field .select {
+  @apply mt-1 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500;
 }
 
-.o-ctrl-sel.o-ctrl-sel--expanded {
+.select-field.is-expanded .select {
   @apply w-full;
 }

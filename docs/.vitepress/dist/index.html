@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Service Regions / Areas | Service Regions and Areas</title>
+    <meta name="description" content="Just playing around.">
+    <link rel="stylesheet" href="/assets/style.a1000684.css">
+    <link rel="modulepreload" href="/assets/Home.132920c1.js">
+    <link rel="modulepreload" href="/assets/app.efa7101f.js">
+    <link rel="modulepreload" href="/assets/index.md.bb9fec20.lean.js">
+    <link rel="modulepreload" href="/assets/app.efa7101f.js">
+    <meta name="twitter:title" content="Service Regions / Areas | Service Regions and Areas">
+    <meta property="og:title" content="Service Regions / Areas | Service Regions and Areas">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-54abca32><div class="sidebar-button" data-v-54abca32><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="Service Regions and Areas, back to home" data-v-54abca32 data-v-4389d65a><!----> Service Regions and Areas</a><div class="flex-grow" data-v-54abca32></div><div class="nav" data-v-54abca32><!----></div><!--[--><!--]--></header><aside class="sidebar" data-v-08a4a218><!----><!--[--><!--]--><ul class="sidebar-links" data-v-08a4a218><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="#queries">Queries</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#service-region">Service Region</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#service-area-capacity">Service Area Capacity</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#service-area-tech">Service Area Tech</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#service-area">Service Area</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#tables">Tables</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#servicearea">ServiceArea</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#serviceareaavailabilities">ServiceAreaAvailabilities</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#serviceareacapacity">ServiceAreaCapacity</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#serviceareapostalcode">ServiceAreaPostalCode</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#serviceareatechnician">ServiceAreaTechnician</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#serviceregion">ServiceRegion</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#serviceregionmanager">ServiceRegionManager</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#fieldtechavailability">FieldTechAvailability</a><!----></li></ul></li><!--]--></ul><!--[--><!--]--></aside><!-- TODO: make this button accessible --><div class="sidebar-mask"></div><main class="page" data-v-37aec12b><div class="container" data-v-37aec12b><!--[--><!--]--><div style="position:relative;" class="content" data-v-37aec12b><div><ul><li>Permissions ViewRegionsMenu</li></ul><h2 id="queries"><a class="header-anchor" href="#queries" aria-hidden="true">#</a> Queries</h2><h3 id="service-region"><a class="header-anchor" href="#service-region" aria-hidden="true">#</a> Service Region</h3><h4 id="fetch-id"><a class="header-anchor" href="#fetch-id" aria-hidden="true">#</a> <code>Fetch(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegionDTO</span>
+    <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheRegion <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      RegionLeadId <span class="token operator">=</span> sa<span class="token punctuation">.</span>RegionLead<span class="token punctuation">,</span>
+      LeadName <span class="token operator">=</span> sa<span class="token punctuation">.</span>UserRegionLead<span class="token punctuation">.</span>FirstName <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> sa<span class="token punctuation">.</span>UserRegionLead<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span>
+    IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetch"><a class="header-anchor" href="#fetch" aria-hidden="true">#</a> <code>Fetch()</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>IsDeleted <span class="token operator">==</span> <span class="token boolean">false</span>
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegionDTO</span>
+  <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheRegion <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchforactiveserviceregions-active"><a class="header-anchor" href="#fetchforactiveserviceregions-active" aria-hidden="true">#</a> <code>FetchForActiveServiceRegions(active)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>IsActive <span class="token operator">==</span> active <span class="token operator">&amp;&amp;</span> sa<span class="token punctuation">.</span>IsDeleted <span class="token operator">==</span> <span class="token boolean">false</span>
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegionDTO</span>
+  <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheRegion <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchforregionlead-leadid"><a class="header-anchor" href="#fetchforregionlead-leadid" aria-hidden="true">#</a> <code>FetchForRegionLead(leadId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>RegionLead <span class="token operator">==</span> leadId
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegionDTO</span>
+  <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheRegion <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      RegionLeadId <span class="token operator">=</span> sa<span class="token punctuation">.</span>RegionLead<span class="token punctuation">,</span>
+      LeadName <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionManagers<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ServiceRegionsManagerUser<span class="token punctuation">.</span>FirstName <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> sa<span class="token punctuation">.</span>ServiceRegionManagers<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ServiceRegionsManagerUser<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span>
+      IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="insert-serviceregiondto-item"><a class="header-anchor" href="#insert-serviceregiondto-item" aria-hidden="true">#</a> <code>Insert(ServiceRegionDTO item)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> newItem <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegion</span>
+<span class="token punctuation">{</span>
+    Name <span class="token operator">=</span> item<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsActive <span class="token operator">=</span> item<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+    IsCatastropheRegion <span class="token operator">=</span> item<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> item<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> item<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+
+    RegionLead <span class="token operator">=</span> item<span class="token punctuation">.</span>RegionLeadId<span class="token punctuation">,</span>
+    IsDeleted <span class="token operator">=</span> item<span class="token punctuation">.</span>IsDeleted
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span>newItem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+item<span class="token punctuation">.</span>Id <span class="token operator">=</span> newItem<span class="token punctuation">.</span>Id<span class="token punctuation">;</span>
+</code></pre></div><h4 id="update-serviceregiondto-item"><a class="header-anchor" href="#update-serviceregiondto-item" aria-hidden="true">#</a> <code>Update(ServiceRegionDTO item)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> item<span class="token punctuation">.</span>Id
+  <span class="token keyword">select</span> r
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+data<span class="token punctuation">.</span>Name <span class="token operator">=</span> item<span class="token punctuation">.</span>Name<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>IsCatastropheRegion <span class="token operator">=</span> item<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>IsActive <span class="token operator">=</span> item<span class="token punctuation">.</span>IsActive<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CreatedOn <span class="token operator">=</span> item<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CreatedBy <span class="token operator">=</span> item<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>RegionLead <span class="token operator">=</span> item<span class="token punctuation">.</span>RegionLeadId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>IsDeleted <span class="token operator">=</span> item<span class="token punctuation">.</span>IsDeleted<span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">var</span></span> count <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="delete-id"><a class="header-anchor" href="#delete-id" aria-hidden="true">#</a> <code>Delete(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> r
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchforuser-userid"><a class="header-anchor" href="#fetchforuser-userid" aria-hidden="true">#</a> <code>FetchForUser(userId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sr <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">sr</span><span class="token punctuation">.</span>IsActive <span class="token operator">&amp;&amp;</span> sr<span class="token punctuation">.</span>ServiceRegionManagers<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>r <span class="token operator">=&gt;</span> r<span class="token punctuation">.</span>UserId <span class="token operator">==</span> userId <span class="token operator">&amp;&amp;</span> r<span class="token punctuation">.</span>ServiceRegionId <span class="token operator">==</span> sr<span class="token punctuation">.</span>Id<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> sr<span class="token punctuation">.</span>IsDeleted <span class="token operator">==</span> <span class="token boolean">false</span>
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegionDTO</span>
+  <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sr<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sr<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sr<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheRegion <span class="token operator">=</span> sr<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sr<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      IsDeleted <span class="token operator">=</span> sr<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchforsvt2-userid"><a class="header-anchor" href="#fetchforsvt2-userid" aria-hidden="true">#</a> FetchForSvt2(userId)</h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sr <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegions
+  <span class="token keyword">where</span> <span class="token class-name">sr</span><span class="token punctuation">.</span>IsActive <span class="token operator">&amp;&amp;</span> sr<span class="token punctuation">.</span>RegionLead <span class="token operator">==</span> userId <span class="token operator">&amp;&amp;</span> sr<span class="token punctuation">.</span>IsDeleted <span class="token operator">==</span> <span class="token boolean">false</span>
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceRegionDTO</span>
+  <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sr<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sr<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sr<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheRegion <span class="token operator">=</span> sr<span class="token punctuation">.</span>IsCatastropheRegion<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sr<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sr<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      IsDeleted <span class="token operator">=</span> sr<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="service-area-capacity"><a class="header-anchor" href="#service-area-capacity" aria-hidden="true">#</a> Service Area Capacity</h3><h4 id="fetchbycompanyservicearea-serviceareaid-companyid"><a class="header-anchor" href="#fetchbycompanyservicearea-serviceareaid-companyid" aria-hidden="true">#</a> <code>FetchByCompanyServiceArea(serviceAreaId, companyId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> serviceAreaCapacities <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaCapacities
+  <span class="token keyword">where</span> <span class="token class-name">serviceAreaCapacities</span><span class="token punctuation">.</span>ServiceAreaId <span class="token operator">==</span> serviceAreaId
+    <span class="token operator">&amp;&amp;</span> serviceAreaCapacities<span class="token punctuation">.</span>CompanyId <span class="token operator">==</span> companyId
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaCapacityDTO</span>
+  <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    CompanyId <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>CompanyId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Capacity <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span>
+    ServiceAreaId <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">,</span>
+    EndTime <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>EndTime<span class="token punctuation">,</span>
+    StartTime <span class="token operator">=</span> serviceAreaCapacities<span class="token punctuation">.</span>StartTime
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetch-id-1"><a class="header-anchor" href="#fetch-id-1" aria-hidden="true">#</a> <code>Fetch(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sac <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaCapacities
+  <span class="token keyword">where</span> <span class="token class-name">sac</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaCapacityDTO</span>
+  <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> sac<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    CompanyId <span class="token operator">=</span> sac<span class="token punctuation">.</span>CompanyId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sac<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sac<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Capacity <span class="token operator">=</span> sac<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span>
+    ServiceAreaId <span class="token operator">=</span> sac<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">,</span>
+    EndTime <span class="token operator">=</span> sac<span class="token punctuation">.</span>EndTime<span class="token punctuation">,</span>
+    StartTime <span class="token operator">=</span> sac<span class="token punctuation">.</span>StartTime
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="insert-serviceareacapacity"><a class="header-anchor" href="#insert-serviceareacapacity" aria-hidden="true">#</a> <code>Insert(serviceAreaCapacity)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaCapacity</span>
+  <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    CompanyId <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>CompanyId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Capacity <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>serviceAreaCapacity<span class="token punctuation">.</span>Capacity<span class="token punctuation">,</span>
+    ServiceAreaId <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">,</span>
+    EndTime <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>EndTime<span class="token punctuation">,</span>
+    StartTime <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>StartTime
+  <span class="token punctuation">}</span>
+
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaCapacities<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+serviceAreaCapacity<span class="token punctuation">.</span>Id <span class="token operator">=</span> data<span class="token punctuation">.</span>Id<span class="token punctuation">;</span>
+</code></pre></div><h4 id="delete-serviceareacapacity"><a class="header-anchor" href="#delete-serviceareacapacity" aria-hidden="true">#</a> <code>Delete(serviceAreaCapacity)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaCapacities
+<span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+<span class="token keyword">select</span> r<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="update"><a class="header-anchor" href="#update" aria-hidden="true">#</a> <code>Update</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sac <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaCapacities
+  <span class="token keyword">where</span> <span class="token class-name">sac</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> serviceAreaCapacity<span class="token punctuation">.</span>Id
+  <span class="token keyword">select</span> sac
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+data<span class="token punctuation">.</span>Id <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>Id<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CompanyId <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>CompanyId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CreatedBy <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CreatedOn <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>Capacity <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span>serviceAreaCapacity<span class="token punctuation">.</span>Capacity<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>ServiceAreaId <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>EndTime <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>EndTime<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>StartTime <span class="token operator">=</span> serviceAreaCapacity<span class="token punctuation">.</span>StartTime<span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">var</span></span> count <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="service-area-tech"><a class="header-anchor" href="#service-area-tech" aria-hidden="true">#</a> Service Area Tech</h3><h4 id="fetch-serviceareaid"><a class="header-anchor" href="#fetch-serviceareaid" aria-hidden="true">#</a> <code>Fetch(serviceAreaId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaTechnicians
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>ServiceAreaId <span class="token operator">==</span> ServiceAreaId
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaTechDTO</span>
+  <span class="token punctuation">{</span>
+    ServiceAreaId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">,</span>
+    UserId <span class="token operator">=</span> sa<span class="token punctuation">.</span>UserId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="insert-serviceareatechdto-dto"><a class="header-anchor" href="#insert-serviceareatechdto-dto" aria-hidden="true">#</a> <code>Insert(ServiceAreaTechDTO dto)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaTechnician</span> <span class="token punctuation">{</span>
+  ServiceAreaId <span class="token operator">=</span> dto<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">,</span>
+  UserId <span class="token operator">=</span> dto<span class="token punctuation">.</span>UserId<span class="token punctuation">,</span>
+  CreatedBy <span class="token operator">=</span> dto<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+  CreatedOn <span class="token operator">=</span> dto<span class="token punctuation">.</span>CreatedOn
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaTechnicians<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">var</span></span> count <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="update-serviceareatechdto-dto"><a class="header-anchor" href="#update-serviceareatechdto-dto" aria-hidden="true">#</a> <code>Update(ServiceAreaTechDTO dto)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaTechnicians
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>ServiceAreaId <span class="token operator">==</span> dto<span class="token punctuation">.</span>ServiceAreaId
+    <span class="token operator">&amp;&amp;</span> sa<span class="token punctuation">.</span>UserId<span class="token operator">==</span>dto<span class="token punctuation">.</span>UserId
+  <span class="token keyword">select</span> sa
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">First</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+data<span class="token punctuation">.</span>ServiceAreaId <span class="token operator">=</span> dto<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>UserId <span class="token operator">=</span> dto<span class="token punctuation">.</span>UserId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CreatedBy <span class="token operator">=</span> dto<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>CreatedOn <span class="token operator">=</span> dto<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">var</span></span> count <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="deleteallforarea-serviceareaid"><a class="header-anchor" href="#deleteallforarea-serviceareaid" aria-hidden="true">#</a> <code>DeleteAllForArea(ServiceAreaId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> lstOfServiceAreasTechnicianss <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaTechnicians
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>ServiceAreaId <span class="token operator">==</span> ServiceAreaId
+  <span class="token keyword">select</span> r
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="deleteallforuser-userid"><a class="header-anchor" href="#deleteallforuser-userid" aria-hidden="true">#</a> <code>DeleteAllForUser(userId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> listOfUserServiceAreass <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaTechnicians
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>UserId <span class="token operator">==</span> userId
+  <span class="token keyword">select</span> r
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="delete-userid-serviceareaid"><a class="header-anchor" href="#delete-userid-serviceareaid" aria-hidden="true">#</a> <code>Delete(userId, serviceAreaId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> item <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaTechnicians
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>UserId <span class="token operator">==</span> userId <span class="token operator">&amp;&amp;</span> r<span class="token punctuation">.</span>ServiceAreaId<span class="token operator">==</span> serviceAreaId
+  <span class="token keyword">select</span> r
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="service-area"><a class="header-anchor" href="#service-area" aria-hidden="true">#</a> Service Area</h3><h4 id="fetch-id-2"><a class="header-anchor" href="#fetch-id-2" aria-hidden="true">#</a> <code>Fetch(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span>
+  <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> id<span class="token punctuation">,</span>
+    Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+    IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+    Street <span class="token operator">=</span> sa<span class="token punctuation">.</span>StreetAddress<span class="token punctuation">,</span>
+    City <span class="token operator">=</span> sa<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+    StateId <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sa<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+    PostalCode <span class="token operator">=</span> sa<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+    Latitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+    Longitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+    AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+    AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+    Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+    ServiceRegionId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+    TimeZoneId <span class="token operator">=</span> sa<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+    IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchforclosest-latitude-longitude"><a class="header-anchor" href="#fetchforclosest-latitude-longitude" aria-hidden="true">#</a> <code>FetchForClosest(latitude, longitude)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">spGetClosestServiceAreas</span><span class="token punctuation">(</span>latitude<span class="token punctuation">,</span> longitude<span class="token punctuation">)</span>
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+    IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+    Street <span class="token operator">=</span> sa<span class="token punctuation">.</span>StreetAddress<span class="token punctuation">,</span>
+    City <span class="token operator">=</span> sa<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+    StateId <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sa<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+    PostalCode <span class="token operator">=</span> sa<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+    Latitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+    Longitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+    AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+    AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+    Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+    ServiceRegionId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+    TimeZoneId <span class="token operator">=</span> sa<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchforsuperdashboard"><a class="header-anchor" href="#fetchforsuperdashboard" aria-hidden="true">#</a> <code>FetchForSuperDashboard()</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>IsActive <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token keyword">select</span> sa
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span>
+  sa <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+    IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+    Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+    AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+    AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetch-1"><a class="header-anchor" href="#fetch-1" aria-hidden="true">#</a> <code>Fetch()</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token operator">!</span>sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token keyword">select</span> sa
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">int</span></span> userId <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ApplicationContext<span class="token punctuation">.</span>User<span class="token punctuation">.</span>Identity <span class="token keyword">as</span> <span class="token class-name">ClaimsIdentity</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Claims<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>c <span class="token operator">=&gt;</span> c<span class="token punctuation">.</span>Type <span class="token operator">==</span> ClaimTypes<span class="token punctuation">.</span>NameIdentifier<span class="token punctuation">)</span><span class="token punctuation">.</span>Value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token keyword">int</span></span> userLevel <span class="token operator">=</span> Convert<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ApplicationContext<span class="token punctuation">.</span>User<span class="token punctuation">.</span>Identity <span class="token keyword">as</span> <span class="token class-name">ClaimsIdentity</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Claims<span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span>c <span class="token operator">=&gt;</span> c<span class="token punctuation">.</span>Type <span class="token operator">==</span> <span class="token string">&quot;UserLevel&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>Value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>userLevel <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Utility<span class="token punctuation">.</span>Enums<span class="token punctuation">.</span>Roles<span class="token punctuation">.</span>ServiceManager<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name"><span class="token keyword">var</span></span> regions <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegionManagers<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>srm <span class="token operator">=&gt;</span> srm<span class="token punctuation">.</span>UserId <span class="token operator">==</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  result <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>m <span class="token operator">=&gt;</span> regions<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>r <span class="token operator">=&gt;</span> r<span class="token punctuation">.</span>ServiceRegionId <span class="token operator">==</span> m<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userLevel <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>Utility<span class="token punctuation">.</span>Enums<span class="token punctuation">.</span>Roles<span class="token punctuation">.</span>ServiceTech2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  result <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>m <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>ServiceRegion<span class="token punctuation">.</span>RegionLead <span class="token operator">==</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span>
+    sa <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+      Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+      Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+      IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+      IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+      Latitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+      Longitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+      Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+      Street <span class="token operator">=</span> sa<span class="token punctuation">.</span>StreetAddress<span class="token punctuation">,</span>
+      City <span class="token operator">=</span> sa<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+      StateId <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sa<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+      PostalCode <span class="token operator">=</span> sa<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+      ServiceRegionId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+      TimeZoneId <span class="token operator">=</span> sa<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+      CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+      ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+      Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+      AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+      AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+      IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name"><span class="token keyword">var</span></span> result2 <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span>
+  sa <span class="token operator">=&gt;</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+    IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+    Latitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+    Longitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+    AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+    AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+    Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+    Street <span class="token operator">=</span> sa<span class="token punctuation">.</span>StreetAddress<span class="token punctuation">,</span>
+    City <span class="token operator">=</span> sa<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+    StateId <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sa<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+    PostalCode <span class="token operator">=</span> sa<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+    ServiceRegionId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+    TimeZoneId <span class="token operator">=</span> sa<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+    IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">return</span> result2<span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchbyregion-regionid"><a class="header-anchor" href="#fetchbyregion-regionid" aria-hidden="true">#</a> <code>FetchByRegion(regionId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>ServiceRegionId <span class="token operator">==</span> regionId
+    <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+    IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+    Latitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+    Longitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+    AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+    AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+    Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+    Street <span class="token operator">=</span> sa<span class="token punctuation">.</span>StreetAddress<span class="token punctuation">,</span>
+    City <span class="token operator">=</span> sa<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+    StateId <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sa<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+    PostalCode <span class="token operator">=</span> sa<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+    ServiceRegionId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+    TimeZoneId <span class="token operator">=</span> sa<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+    IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchbyuser-userid"><a class="header-anchor" href="#fetchbyuser-userid" aria-hidden="true">#</a> <code>FetchByUser(userId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> result <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">sa</span><span class="token punctuation">.</span>ServiceAreaTechnicians<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>m <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>UserId <span class="token operator">==</span> userId<span class="token punctuation">)</span>
+    <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> sa<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    Name <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsActive <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+    IsCatastropheArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+    Latitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+    Longitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+    AddressLatitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+    AddressLongitude <span class="token operator">=</span> sa<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+    Radius <span class="token operator">=</span> sa<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+    Street <span class="token operator">=</span> sa<span class="token punctuation">.</span>StreetAddress<span class="token punctuation">,</span>
+    City <span class="token operator">=</span> sa<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+    StateId <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>sa<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+    PostalCode <span class="token operator">=</span> sa<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+    ServiceRegionId <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+    TimeZoneId <span class="token operator">=</span> sa<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+    CreatedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    CreatedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    ModifiedBy <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+    ModifiedOn <span class="token operator">=</span> sa<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+    Timestamp <span class="token operator">=</span> sa<span class="token punctuation">.</span>RowVersion<span class="token punctuation">,</span>
+    RegionName <span class="token operator">=</span> sa<span class="token punctuation">.</span>ServiceRegion<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    IsDeleted <span class="token operator">=</span> sa<span class="token punctuation">.</span>IsDeleted
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="insert-serviceareadto-item"><a class="header-anchor" href="#insert-serviceareadto-item" aria-hidden="true">#</a> <code>Insert(ServiceAreaDTO item)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> newItem <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceArea</span> <span class="token punctuation">{</span>
+  Name <span class="token operator">=</span> item<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+  StreetAddress <span class="token operator">=</span> item<span class="token punctuation">.</span>Street<span class="token punctuation">,</span>
+  City <span class="token operator">=</span> item<span class="token punctuation">.</span>City<span class="token punctuation">,</span>
+  StateId <span class="token operator">=</span> item<span class="token punctuation">.</span>StateId<span class="token punctuation">,</span>
+  PostalCode <span class="token operator">=</span> item<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+  IsActive <span class="token operator">=</span> item<span class="token punctuation">.</span>IsActive<span class="token punctuation">,</span>
+  IsCatastropheArea <span class="token operator">=</span> item<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">,</span>
+  Latitude <span class="token operator">=</span> item<span class="token punctuation">.</span>Latitude<span class="token punctuation">,</span>
+  Longitude <span class="token operator">=</span> item<span class="token punctuation">.</span>Longitude<span class="token punctuation">,</span>
+  Radius <span class="token operator">=</span> item<span class="token punctuation">.</span>Radius<span class="token punctuation">,</span>
+  ServiceRegionId <span class="token operator">=</span> item<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+  TimeZoneId <span class="token operator">=</span> item<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">,</span>
+  CreatedOn <span class="token operator">=</span> item<span class="token punctuation">.</span>CreatedOn<span class="token punctuation">,</span>
+  CreatedBy <span class="token operator">=</span> item<span class="token punctuation">.</span>CreatedBy<span class="token punctuation">,</span>
+  RowVersion <span class="token operator">=</span> item<span class="token punctuation">.</span>Timestamp<span class="token punctuation">,</span>
+  AddressLongitude <span class="token operator">=</span> item<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">,</span>
+  AddressLatitude <span class="token operator">=</span> item<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">,</span>
+  IsDeleted <span class="token operator">=</span> item<span class="token punctuation">.</span>IsDeleted
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span>newItem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+item<span class="token punctuation">.</span>Id <span class="token operator">=</span> newItem<span class="token punctuation">.</span>Id<span class="token punctuation">;</span>
+item<span class="token punctuation">.</span>Timestamp <span class="token operator">=</span> newItem<span class="token punctuation">.</span>RowVersion<span class="token punctuation">;</span>
+</code></pre></div><h4 id="update-serviceareadto-item"><a class="header-anchor" href="#update-serviceareadto-item" aria-hidden="true">#</a> <code>Update(ServiceAreaDTO item)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> item<span class="token punctuation">.</span>Id
+  <span class="token keyword">select</span> r<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">DataNotFoundException</span><span class="token punctuation">(</span><span class="token string">&quot;ServiceAreas&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">.</span>RowVersion<span class="token punctuation">.</span><span class="token function">Matches</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>Timestamp<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ConcurrencyException</span><span class="token punctuation">(</span><span class="token string">&quot;ServiceAreas&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name"><span class="token keyword">int</span><span class="token punctuation">?</span></span> state<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>StateId <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">else</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> item<span class="token punctuation">.</span>StateId<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+data<span class="token punctuation">.</span>Name <span class="token operator">=</span> item<span class="token punctuation">.</span>Name<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>StreetAddress <span class="token operator">=</span> item<span class="token punctuation">.</span>Street<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>City <span class="token operator">=</span> item<span class="token punctuation">.</span>City<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>StateId <span class="token operator">=</span> state<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>ServiceRegionId <span class="token operator">=</span> item<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>TimeZoneId <span class="token operator">=</span> item<span class="token punctuation">.</span>TimeZoneId<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>PostalCode <span class="token operator">=</span> item<span class="token punctuation">.</span>PostalCode<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>Latitude <span class="token operator">=</span> item<span class="token punctuation">.</span>Latitude<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>Longitude <span class="token operator">=</span> item<span class="token punctuation">.</span>Longitude<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>Radius <span class="token operator">=</span> item<span class="token punctuation">.</span>Radius<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>IsCatastropheArea <span class="token operator">=</span> item<span class="token punctuation">.</span>IsCatastropheArea<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>IsActive <span class="token operator">=</span> item<span class="token punctuation">.</span>IsActive<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>RowVersion <span class="token operator">=</span> item<span class="token punctuation">.</span>Timestamp<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>AddressLatitude <span class="token operator">=</span> item<span class="token punctuation">.</span>AddressLatitude<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>AddressLongitude <span class="token operator">=</span> item<span class="token punctuation">.</span>AddressLongitude<span class="token punctuation">;</span>
+data<span class="token punctuation">.</span>IsDeleted <span class="token operator">=</span> item<span class="token punctuation">.</span>IsDeleted<span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">var</span></span> count <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="delete-id-1"><a class="header-anchor" href="#delete-id-1" aria-hidden="true">#</a> <code>Delete(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> r <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">r</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> r
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas<span class="token punctuation">.</span><span class="token function">DeleteObject</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="serviceareaworkload-id"><a class="header-anchor" href="#serviceareaworkload-id" aria-hidden="true">#</a> <code>ServiceAreaWorkLoad(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> regions <span class="token operator">=</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceRegionManagers<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>srm <span class="token operator">=&gt;</span> srm<span class="token punctuation">.</span>UserId <span class="token operator">==</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> area <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas
+  <span class="token keyword">where</span> <span class="token class-name">area</span><span class="token punctuation">.</span>IsActive
+    <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>area<span class="token punctuation">.</span>IsDeleted
+    <span class="token operator">&amp;&amp;</span> area<span class="token punctuation">.</span>ServiceRegion<span class="token punctuation">.</span>IsActive
+    <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>area<span class="token punctuation">.</span>ServiceRegion<span class="token punctuation">.</span>IsDeleted
+    <span class="token operator">&amp;&amp;</span> area<span class="token punctuation">.</span>ServiceAreaTechnicians<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>m <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>UserId <span class="token operator">==</span> id<span class="token punctuation">)</span>
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaDTO</span> <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> area<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    Name <span class="token operator">=</span> area<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    ServiceRegionId <span class="token operator">=</span> area<span class="token punctuation">.</span>ServiceRegionId<span class="token punctuation">,</span>
+    RegionName <span class="token operator">=</span> area<span class="token punctuation">.</span>ServiceRegion<span class="token punctuation">.</span>Name<span class="token punctuation">,</span>
+    WorkLoad <span class="token operator">=</span> area<span class="token punctuation">.</span>ProjectInspections<span class="token punctuation">.</span><span class="token function">Where</span><span class="token punctuation">(</span>m <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>Project<span class="token punctuation">.</span>ProjectStatusId <span class="token operator">!=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>ProjectStates<span class="token punctuation">.</span>Closed
+    <span class="token operator">&amp;&amp;</span> m<span class="token punctuation">.</span>Project<span class="token punctuation">.</span>ProjectStatusId <span class="token operator">!=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>ProjectStates<span class="token punctuation">.</span>Archived
+    <span class="token operator">&amp;&amp;</span> m<span class="token punctuation">.</span>Project<span class="token punctuation">.</span>ProjectStatusId <span class="token operator">!=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>ProjectStates<span class="token punctuation">.</span>Billed
+    <span class="token operator">&amp;&amp;</span> m<span class="token punctuation">.</span>ProjectInspectionTechnician<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>a <span class="token operator">=&gt;</span> a<span class="token punctuation">.</span>Id <span class="token operator">==</span> id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Select</span><span class="token punctuation">(</span>a <span class="token operator">=&gt;</span> a<span class="token punctuation">.</span>ProjectId<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Distinct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    Unassignable <span class="token operator">=</span> area<span class="token punctuation">.</span>ServiceAreaTechnicians<span class="token punctuation">.</span><span class="token function">Any</span><span class="token punctuation">(</span>m <span class="token operator">=&gt;</span> m<span class="token punctuation">.</span>UserId <span class="token operator">==</span> id<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Distinct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> data<span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="fetchserviceareapostalcodes-serviceareaid"><a class="header-anchor" href="#fetchserviceareapostalcodes-serviceareaid" aria-hidden="true">#</a> <code>FetchServiceAreaPostalCodes(serviceAreaId)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> results <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sapc <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaPostalCodes
+  <span class="token keyword">join</span> sa <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreas <span class="token keyword">on</span> sapc<span class="token punctuation">.</span>ServiceAreaId equals sa<span class="token punctuation">.</span>Id
+  <span class="token keyword">where</span> <span class="token class-name">sapc</span><span class="token punctuation">.</span>ServiceAreaId <span class="token operator">==</span> serviceAreaId
+  <span class="token keyword">select</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaPostalCodeDTO</span> <span class="token punctuation">{</span>
+    Id <span class="token operator">=</span> sapc<span class="token punctuation">.</span>Id<span class="token punctuation">,</span>
+    PostalCode <span class="token operator">=</span> sapc<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+    ServiceAreaId <span class="token operator">=</span> sapc<span class="token punctuation">.</span>ServiceAreaId<span class="token punctuation">,</span>
+    ServiceArea <span class="token operator">=</span> sa<span class="token punctuation">.</span>Name
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">OrderBy</span><span class="token punctuation">(</span>p <span class="token operator">=&gt;</span> p<span class="token punctuation">.</span>PostalCode<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ToList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="insertserviceareapostalcode-serviceareapostalcodedto-serviceareapostalcodedto"><a class="header-anchor" href="#insertserviceareapostalcode-serviceareapostalcodedto-serviceareapostalcodedto" aria-hidden="true">#</a> <code>InsertServiceAreaPostalCode(ServiceAreaPostalCodeDTO serviceAreaPostalCodeDTO)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> newItem <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">ServiceAreaPostalCode</span> <span class="token punctuation">{</span>
+  PostalCode <span class="token operator">=</span> serviceAreaPostalCodeDTO<span class="token punctuation">.</span>PostalCode<span class="token punctuation">,</span>
+  ServiceAreaId <span class="token operator">=</span> serviceAreaPostalCodeDTO<span class="token punctuation">.</span>ServiceAreaId
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaPostalCodes<span class="token punctuation">.</span><span class="token function">AddObject</span><span class="token punctuation">(</span>newItem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="deleteserviceareapostalcode-id"><a class="header-anchor" href="#deleteserviceareapostalcode-id" aria-hidden="true">#</a> <code>DeleteServiceAreaPostalCode(id)</code></h4><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sapc <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaPostalCodes
+  <span class="token keyword">where</span> <span class="token class-name">sapc</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> sapc
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaPostalCodes<span class="token punctuation">.</span><span class="token function">DeleteObject</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-csharp"><pre><code><span class="token class-name"><span class="token keyword">var</span></span> data <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token keyword">from</span> sapc <span class="token keyword">in</span> ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaPostalCodes
+  <span class="token keyword">where</span> <span class="token class-name">sapc</span><span class="token punctuation">.</span>Id <span class="token operator">==</span> id
+  <span class="token keyword">select</span> sapc
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">FirstOrDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span>ServiceAreaPostalCodes<span class="token punctuation">.</span><span class="token function">DeleteObject</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ctx<span class="token punctuation">.</span>ObjectContext<span class="token punctuation">.</span><span class="token function">SaveChanges</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>🎉 💯</p><table><thead><tr><th>Tables</th><th style="text-align:center;">Are</th><th style="text-align:right;">Cool</th></tr></thead><tbody><tr><td>col 3 is</td><td style="text-align:center;">right-aligned</td><td style="text-align:right;">$1600</td></tr><tr><td>col 2 is</td><td style="text-align:center;">centered</td><td style="text-align:right;">$12</td></tr><tr><td>zebra stripes</td><td style="text-align:center;">are neat</td><td style="text-align:right;">$1</td></tr></tbody></table><div class="tip custom-block"><p class="custom-block-title">TIP</p><p>This is a tip</p></div><div class="language-html"><pre><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>todo in todos<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>todo.id<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    {{ todo.text }}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">WARNING</p><p>This is a warning</p></div><div class="language-js"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><br><br><br><br></div><pre><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      msg<span class="token operator">:</span> <span class="token string">&#39;Highlighted!&#39;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="danger custom-block"><p class="custom-block-title">WARNING</p><p>This is a dangerous warning</p></div><h2 id="tables"><a class="header-anchor" href="#tables" aria-hidden="true">#</a> Tables</h2><h3 id="servicearea"><a class="header-anchor" href="#servicearea" aria-hidden="true">#</a> <code>ServiceArea</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>Id</td><td></td></tr><tr><td>ServiceRegionId</td><td>(FK_ServiceArea_ServiceRegion_ServiceRegionId)</td></tr><tr><td>StateId</td><td>(FK_ServiceArea_State_StateId)</td></tr><tr><td>TimeZoneId</td><td>(FK_ServiceArea_Timezone_TimeZoneId)</td></tr><tr><td>AddressLatitude</td><td></td></tr><tr><td>AddressLongitude</td><td></td></tr><tr><td>City</td><td></td></tr><tr><td>CreatedBy (FK_ServiceArea_User_CreatedBy)</td><td></td></tr><tr><td>CreatedOn</td><td></td></tr><tr><td>IsActive</td><td></td></tr><tr><td>IsCatastropheArea</td><td></td></tr><tr><td>IsDeleted</td><td></td></tr><tr><td>Latitude</td><td></td></tr><tr><td>Longitude</td><td></td></tr><tr><td>Name</td><td></td></tr><tr><td>PostalCode</td><td></td></tr><tr><td>Radius</td><td></td></tr><tr><td>StreetAddress</td><td></td></tr></tbody></table><h3 id="serviceareaavailabilities"><a class="header-anchor" href="#serviceareaavailabilities" aria-hidden="true">#</a> <code>ServiceAreaAvailabilities</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>Id</td><td></td></tr><tr><td>WindowStart</td><td></td></tr><tr><td>WindowEnd</td><td></td></tr></tbody></table><h3 id="serviceareacapacity"><a class="header-anchor" href="#serviceareacapacity" aria-hidden="true">#</a> <code>ServiceAreaCapacity</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>Id</td><td></td></tr><tr><td>ServiceAreaId</td><td>(FK_ServiceAreaCapacity_ServiceArea_ServiceAreaId)</td></tr><tr><td>CompanyId</td><td>(FK_ServiceAreaCapacity_Company_CompanyId)</td></tr><tr><td>CreatedBy</td><td>(FK_ServiceAreaCapacity_User_CreatedBy)</td></tr><tr><td>CreatedOn</td><td></td></tr><tr><td>Capacity</td><td></td></tr><tr><td>EndTime</td><td></td></tr><tr><td>StartTime</td><td></td></tr></tbody></table><h3 id="serviceareapostalcode"><a class="header-anchor" href="#serviceareapostalcode" aria-hidden="true">#</a> <code>ServiceAreaPostalCode</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>Id</td><td></td></tr><tr><td>ServiceAreaId</td><td>(FK_ServiceAreaPostalCode_ServiceArea_ServiceAreaId)</td></tr><tr><td>PostalCode</td><td></td></tr></tbody></table><h3 id="serviceareatechnician"><a class="header-anchor" href="#serviceareatechnician" aria-hidden="true">#</a> <code>ServiceAreaTechnician</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>ServiceAreaId</td><td>(FK_ServiceAreaTechnician_ServiceArea_ServiceAreaId)</td></tr><tr><td>UserId</td><td>(FK_ServiceAreaTechnician_User_UserId)</td></tr><tr><td>CreatedBy</td><td>(FK_ServiceAreaTechnician_User_CreatedBy)</td></tr><tr><td>CreatedOn</td><td></td></tr></tbody></table><h3 id="serviceregion"><a class="header-anchor" href="#serviceregion" aria-hidden="true">#</a> <code>ServiceRegion</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>Id</td><td></td></tr><tr><td>CreatedBy</td><td>(FK_ServiceRegion_User_CreatedBy)</td></tr><tr><td>RegionLead</td><td></td></tr><tr><td>Name</td><td></td></tr><tr><td>CreatedOn</td><td></td></tr><tr><td>IsActive</td><td></td></tr><tr><td>IsCatastropheRegion</td><td></td></tr><tr><td>IsDeleted</td><td></td></tr></tbody></table><h3 id="serviceregionmanager"><a class="header-anchor" href="#serviceregionmanager" aria-hidden="true">#</a> <code>ServiceRegionManager</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>ServiceRegionId</td><td>(FK_ServiceRegionManager_ServiceRegion_ServiceRegionId)</td></tr><tr><td>UserId</td><td>(FK_ServiceRegionManager_User_UserId)</td></tr><tr><td>CreatedBy</td><td>(FK_ServiceRegionManager_User_CreatedBy)</td></tr><tr><td>CreatedOn</td><td></td></tr></tbody></table><h3 id="fieldtechavailability"><a class="header-anchor" href="#fieldtechavailability" aria-hidden="true">#</a> <code>FieldTechAvailability</code></h3><table><thead><tr><th>Column</th><th>FK</th></tr></thead><tbody><tr><td>Id</td><td></td></tr><tr><td>ServiceAreaId</td><td>(FK_FieldTechAvailability_ServiceArea_ServiceAreaId)</td></tr><tr><td>FieldTechUserId</td><td>(FK_FieldTechAvailability_User_FieldTechUserId)</td></tr><tr><td>CreatedBy</td><td>(FK_FieldTechAvailability_User_CreatedBy)</td></tr><tr><td>CreatedOn</td><td></td></tr><tr><td>EndDate</td><td></td></tr><tr><td>IsAvailable</td><td></td></tr><tr><td>StartDate</td><td></td></tr></tbody></table></div></div><footer class="page-footer" data-v-37aec12b data-v-43896ec4><div class="edit" data-v-43896ec4><div class="edit-link" data-v-43896ec4 data-v-3e887afc><!----></div></div><div class="updated" data-v-43896ec4><!----></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"inbox.md\":\"0cdeae1b\",\"notes.md\":\"dd47acf0\",\"billing.md\":\"ff51e0c8\",\"claims.md\":\"45614a2a\",\"core-10.md\":\"7dcbc8ad\",\"customers.md\":\"758aa5d2\",\"index-bak.md\":\"ad0836c0\",\"index.md\":\"bb9fec20\",\"projects.md\":\"73bf106a\",\"regions.md\":\"adaf7c5d\",\"service-territories-and-areas.md\":\"6390f5aa\",\"service-types.md\":\"22afa52c\",\"territory.md\":\"ee95c50d\",\"users-roles-permission.md\":\"3a3aec5f\",\"xactimate.md\":\"3df72539\"}")</script>
+    <script type="module" async src="/assets/app.efa7101f.js"></script>
+  </body>
+</html>

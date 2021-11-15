@@ -1,39 +1,28 @@
 <template>
   <main class="flex-1">
-    <BasePageHeading> {{ $t('resources') }} </BasePageHeading>
+    <BasePageHeading>{{ $t('resources') }}</BasePageHeading>
     <section class="p-8">
       <div class="p-8">
         <span
           class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-warning-100 text-warning-800"
-        >
-          {{ $t('badge') }}
-        </span>
+        >{{ $t('badge') }}</span>
         <span
           class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-danger-100 text-danger-800"
-        >
-          {{ $t('badge') }}
-        </span>
+        >{{ $t('badge') }}</span>
         <span
           class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-info-100 text-info-800"
-        >
-          {{ $t('badge') }}
-        </span>
+        >{{ $t('badge') }}</span>
         <span
           class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-success-100 text-success-800"
-        >
-          {{ $t('badge') }}
-        </span>
+        >{{ $t('badge') }}</span>
       </div>
       <div class="flex items-center justify-center">
         <div class="relative">
           <div v-if="open" @click="open = false" class="fixed inset-0" />
-          <button
-            @click="open = !open"
-            class="relative flex items-center focus:outline-none"
-          >
+          <button @click="open = !open" class="relative flex items-center focus:outline-none">
             <img
-              :src="person.avatarUrl"
-              :alt="`${person.fullName}'s avatar`"
+              :src="user.avatarUrl"
+              :alt="`${user.fullName}'s avatar`"
               class="w-8 h-8 rounded-full"
             />
             <span class="ml-2 font-medium">{{ fullName }}</span>
@@ -62,28 +51,16 @@
             >
               <ul>
                 <li>
-                  <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-primary-500 hover:text-white"
-                  >
-                    Profile
-                  </a>
+                  <a href="#" class="block px-4 py-2 hover:bg-primary-500 hover:text-white">Profile</a>
                 </li>
                 <li>
                   <a
                     href="#"
                     class="block px-4 py-2 hover:bg-primary-500 hover:text-white"
-                  >
-                    Account settings
-                  </a>
+                  >Account settings</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-primary-500 hover:text-white"
-                  >
-                    Sign out
-                  </a>
+                  <a href="#" class="block px-4 py-2 hover:bg-primary-500 hover:text-white">Sign out</a>
                 </li>
               </ul>
             </div>
@@ -98,17 +75,17 @@
 export default {
   data() {
     return {
-      person: {
+      user: {
         firstName: 'Jeremy',
         lastName: 'Doublestein',
-        avatarUrl: '/assets/img/people/jeremy.jpeg',
+        avatarUrl: '/assets/img/users/jeremy.jpeg',
       },
       open: false,
     }
   },
   computed: {
     fullName() {
-      return `${this.person.firstName} ${this.person.lastName}`
+      return `${this.user.firstName} ${this.user.lastName}`
     },
   },
 }

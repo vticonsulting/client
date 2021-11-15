@@ -1,62 +1,75 @@
-.o-table {
-  @apply bg-transparent table-fixed;
+@layer base {
+  .table thead {
+    @apply bg-gray-50 dark:bg-gray-900;
+  }
+
+  .table.is-striped tbody tr:nth-child(2n) {
+    @apply bg-gray-50;
+  }
+
+  .table.is-hoverable tbody tr {
+    @apply hover:bg-gray-50;
+  }
+
+  .table.is-bordered th,
+  .table.is-bordered td {
+    @apply border border-gray-200;
+  }
+
+  .table th.is-centered,
+  .table td.is-centered {
+    @apply text-center;
+  }
+
+  :root {
+    --oruga-table-narrow-padding: 0.25em 0.5em;
+    --oruga-table-striped-background-color: #fafafa;
+
+    /*
+    --oruga-table-background-color
+    --oruga-table-background
+    --oruga-table-boder
+    --oruga-table-border-radius
+    --oruga-table-bordered-border-width
+    --oruga-table-bordered-bottom-color
+    --oruga-table-card-box-shadow
+    --oruga-table-card-cell-font-weight
+    --oruga-table-card-cell-padding
+    --oruga-table-card-cell-text-align
+    --oruga-table-card-detail-margin
+    --oruga-table-card-margin
+    --oruga-table-color
+    --oruga-table-current-sort-border-color
+    --oruga-table-current-sort-font-weight
+    --oruga-table-current-sort-hover-border-color
+    --oruga-table-detail-background
+    --oruga-table-detail-box-shadow
+    --oruga-table-detail-chevron-color
+    --oruga-table-detail-chevron-width
+    --oruga-table-detail-padding
+    --oruga-table-focus-border-color
+    --oruga-table-focus-box-shadow
+    --oruga-table-hoverable-background-color
+    --oruga-table-mobile-breakpoint
+    --oruga-table-multi-column-reset-icon-margin
+
+    --oruga-table-row-active-background-color
+    --oruga-table-row-active-color
+    --oruga-table-sticky-header-height
+    --oruga-table-sticky-zindex
+    --oruga-table-striped-background-color
+    --oruga-table-td-border-color
+    --oruga-table-td-border-style
+    --oruga-table-td-border-width
+    --oruga-table-td-padding
+    --oruga-table-th-border-color
+    --oruga-table-th-border-style
+    --oruga-table-th-border-width
+    --oruga-table-th-checkbox-width
+    --oruga-table-th-color
+    --oruga-table-th-detail-width
+    --oruga-table-th-font-weight
+    --oruga-table-th-padding
+    --oruga-table-th-wrap-icon-margin */
+  }
 }
-
-.o-table .o-table__th {
-  @apply px-4 py-3 text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-gray-50 whitespace-nowrap;
-}
-
-.o-table .o-table__td {
-  @apply px-4 py-3;
-}
-
-/* .o-table .o-table__td {
- @apply px-6 py-4 text-sm font-medium text-gray-900 dark:text-gray-50;
-} */
-
-/*
-.o-table__wrapper
-.o-table
-.o-table__th
-.o-table__td
-.o-table__pagination
-
-
-
-
-*/
-
-/* .o-table table tr.o-table-row-selected {
-  @apply px-4 py-2 font-bold rounded bg-opacity-90 text-primary-800 bg-primary-50;
-}
-
-.o-table .o-pagination-wrapper {
-  @apply mt-8;
-}
-
-.is-sticky-column-one {
-  @apply bg-primary-200 !important;
-  color: theme('colors.gray.900') !important;
-}
-
-.is-sticky-column-two {
-  background: #167df0 !important;
-  color: white !important;
-}
-
-.VueTables__child-row-toggler {
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  display: block;
-  margin: auto;
-  text-align: center;
-}
-
-.VueTables__child-row-toggler--closed::before {
-  content: '+';
-}
-
-.VueTables__child-row-toggler--open::before {
-  content: '-';
-} */

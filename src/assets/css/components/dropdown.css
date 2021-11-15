@@ -7,6 +7,10 @@
   @apply bg-white rounded-sm shadow-lg;
 }
 
+.dropdown-menu.is-bottom-left {
+  @apply border-red-500 absolute bottom-0 left-0;
+}
+
 .dropdown-item {
   @apply relative block py-2 no-underline cursor-pointer;
 }
@@ -25,4 +29,9 @@
 
 .dropdown-item-active {
   @apply text-highlight bg-highlight-background dark:text-highlight-dark dark:bg-highlight-background-dark;
+}
+
+.o-drop__menu.o-drop__menu--bottom-left {
+  margin-top: 14px;
+  @apply border border-primary-700;
 }

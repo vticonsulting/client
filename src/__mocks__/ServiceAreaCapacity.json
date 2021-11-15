@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 1,
+    "Capacity": "1",
+    "CompanyId": 338,
+    "CreatedBy": 20351,
+    "CreatedOn": "2020-09-16 13:39:42.607",
+    "EndTime": "0800",
+    "StartTime": "0700",
+    "ServiceAreaId": 808
+  },
+  {
+    "Id": 2,
+    "Capacity": "79",
+    "CompanyId": 398,
+    "CreatedBy": 44880,
+    "CreatedOn": "2020-09-16 13:59:39.937",
+    "EndTime": "0900",
+    "StartTime": "0800",
+    "ServiceAreaId": 838
+  },
+  {
+    "Id": 3,
+    "Capacity": "8",
+    "CompanyId": 398,
+    "CreatedBy": 44880,
+    "CreatedOn": "2020-09-16 14:02:39.100",
+    "EndTime": "1300",
+    "StartTime": "1230",
+    "ServiceAreaId": 838
+  },
+  {
+    "Id": 4,
+    "Capacity": "3",
+    "CompanyId": 329,
+    "CreatedBy": 20351,
+    "CreatedOn": "2020-09-16 17:21:51.607",
+    "EndTime": "0900",
+    "StartTime": "0800",
+    "ServiceAreaId": 808
+  },
+  {
+    "Id": 5,
+    "Capacity": "0",
+    "CompanyId": 329,
+    "CreatedBy": 20351,
+    "CreatedOn": "2020-09-16 17:22:09.500",
+    "EndTime": "1100",
+    "StartTime": "1000",
+    "ServiceAreaId": 808
+  },
+  {
+    "Id": 6,
+    "Capacity": "5",
+    "CompanyId": 329,
+    "CreatedBy": 20351,
+    "CreatedOn": "2020-09-16 17:22:30.133",
+    "EndTime": "1400",
+    "StartTime": "1300",
+    "ServiceAreaId": 808
+  },
+  {
+    "Id": 7,
+    "Capacity": "3",
+    "CompanyId": 388,
+    "CreatedBy": 39629,
+    "CreatedOn": "2020-09-16 21:15:10.723",
+    "EndTime": "0900",
+    "StartTime": "0700",
+    "ServiceAreaId": 1015
+  }
+]

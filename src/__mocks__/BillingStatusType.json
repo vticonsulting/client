@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 0,
+    "Comments": "Account not eligible for exports to Xactware/Xactimate",
+    "Component": "Exemplar",
+    "Description": "N/A"
+  },
+  {
+    "Id": 1,
+    "Comments": "Billing sent to Great Plains (Non Export Accounts)",
+    "Component": "WebServices - GetBillingList",
+    "Description": "Processing"
+  },
+  {
+    "Id": 2,
+    "Comments": "Billing Successful, awaiting invoice from Great Plains (Non Export Accounts)",
+    "Component": "WebServices - SetBillingItem",
+    "Description": "Pending Invoice"
+  },
+  {
+    "Id": 3,
+    "Comments": "Invoice received. Account can be closed (Non Export Accounts)",
+    "Component": "ExchangeWebServices",
+    "Description": "Success"
+  },
+  {
+    "Id": 10,
+    "Comments": "Account eligible for exports to Xactware/Xactimate",
+    "Component": "Exemplar",
+    "Description": "N/A"
+  },
+  {
+    "Id": 11,
+    "Comments": "Billing sent to Great Plains (Export Accounts)",
+    "Component": "WebServices - GetBillingList",
+    "Description": "Processing"
+  },
+  {
+    "Id": 12,
+    "Comments": "Billing Successful, awaiting invoice from Great Plains (Export Accounts)",
+    "Component": "WebServices - SetBillingItem",
+    "Description": "Pending Invoice"
+  },
+  {
+    "Id": 13,
+    "Comments": "Invoice received, awaiting export (Export Accounts)",
+    "Component": "ExchangeWebServices",
+    "Description": "Pending Export"
+  },
+  {
+    "Id": 14,
+    "Comments": "Xactimate export started, awaiting response",
+    "Component": "WebJob - XactimateExportService, XactwareExportService",
+    "Description": "Export Processing"
+  },
+  {
+    "Id": 15,
+    "Comments": "Export success, account can be closed",
+    "Component": "WebJob - XactimateExportService, XactwareExportService",
+    "Description": "Export Successful"
+  },
+  {
+    "Id": 16,
+    "Comments": "Export will be reattempted",
+    "Component": "WebJob - XactwareExportService",
+    "Description": "Export Retry"
+  },
+  {
+    "Id": 17,
+    "Comments": "Xactware TransactionId not found",
+    "Component": "Xactware Export Service",
+    "Description": "Invalid TransactionId"
+  },
+  {
+    "Id": 18,
+    "Comments": "Export failed due to timeout",
+    "Component": "Xactware Export Service",
+    "Description": "Export Timeout"
+  },
+  {
+    "Id": 90,
+    "Comments": "Error sending billing list to Great Plains",
+    "Component": "WebServices - SetBillingItem",
+    "Description": "Billing Export Error"
+  },
+  {
+    "Id": 91,
+    "Comments": "Error received from GreatPlains",
+    "Component": "WebServices - SetBillingItem",
+    "Description": "Billing Error"
+  },
+  {
+    "Id": 92,
+    "Comments": "Error attempting to get invoice",
+    "Component": "ExchangeWebServices",
+    "Description": "Invoice Error"
+  },
+  {
+    "Id": 93,
+    "Comments": "Error sending asset(s) or exporting project details to Xactware",
+    "Component": "WebJob - XactwareExportService",
+    "Description": "Xactware Error"
+  },
+  {
+    "Id": 94,
+    "Comments": "Error exporting project details to Xactimate",
+    "Component": "WebJob - XactwareExportService",
+    "Description": "Xactimate Error"
+  }
+]

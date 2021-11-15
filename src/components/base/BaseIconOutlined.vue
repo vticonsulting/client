@@ -240,11 +240,35 @@
     />
 
     <path
+      v-if="name === 'document-report'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+    />
+
+    <path
       v-if="name === 'document-search'"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-width="2"
       d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z"
+    />
+
+    <path
+      v-if="name === 'dots-horizontal'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+    />
+
+    <path
+      v-if="name === 'dots-vertical'"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
     />
 
     <path
@@ -272,9 +296,7 @@
     />
 
     <g v-if="name === 'folder-download'">
-      <path
-        d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-      />
+      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
       <path
         stroke="#fff"
         stroke-linecap="round"
@@ -710,7 +732,7 @@
 </template>
 
 <script>
-import {capitalize} from '@/helpers'
+import { capitalize } from '@/helpers'
 
 export default {
   name: 'BaseIconOutlined',

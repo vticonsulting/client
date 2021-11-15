@@ -1,23 +1,56 @@
-// import faker from 'faker'
+import faker from 'faker'
 
-// const seedUsers = ( quantity, data) => {
-//   for (let i = 1; i <= quantity; i++) {
-//     const gender = faker.random.number({min: 1, max: 2})
-//     const firstName = faker.name.firstName(gender)
-//     const lastName = faker.name.lastName(gender)
+const seedUsers = function (quantity, data) {
+  for (let i = 1; i <= quantity; i++) {
+    const gender = faker.random.number({min: 1, max: 2})
+    const firstName = faker.name.firstName(gender)
+    const lastName = faker.name.lastName(gender)
 
-//     data.users.push({
-//       id: i,
-//       name: faker.name.findName(firstName, lastName, gender),
-//       username: faker.internet.userName(firstName, lastName),
-//       email: faker.internet.email(firstName, lastName).toLowerCase(),
-//       gender,
-//       dateOfBirth: faker.date.past(55, new Date()),
-//       ocuppation: faker.name.jobTitle(),
-//       avatar: faker.internet.avatar(),
-//     })
-//   }
-// }
+    data.users.push({
+      id: i,
+      name: faker.name.findName(firstName, lastName, gender),
+      username: faker.internet.userName(firstName, lastName),
+      email: faker.internet.email(firstName, lastName).toLowerCase(),
+      gender,
+      dateOfBirth: faker.date.past(55, new Date()),
+      ocuppation: faker.name.jobTitle(),
+      avatar: faker.internet.avatar(),
+    })
+  }
+}
+
+export const carriers = [
+  {
+    id: 1,
+    name: 'Allstate',
+    settings: {
+      meta_title: 'Allstate Insurance Company',
+      meta_desc: 'Volunteer Coordination System for Promise 686',
+      color_primary: '#ABAC22',
+      color_secondary: '#1F1D18',
+      color_set_navbar: 'white-black',
+      color_primary_text: '#fff',
+      color_primary_contrast: 'offset',
+      color_primary_offset: '#797a00',
+      color_secondary_text: '#000',
+      color_secondary_contrast: '',
+      color_secondary_offset: '#514f4a',
+    },
+    status: 40,
+    subdomain: null,
+  },
+]
+
+export const categories = [
+  {CategoryID: 1, CategoryName: 'Beverages'},
+  {CategoryID: 2, CategoryName: 'Condiments'},
+  {CategoryID: 3, CategoryName: 'Confections'},
+  {CategoryID: 4, CategoryName: 'Dairy Products'},
+  {CategoryID: 5, CategoryName: 'Grains/Cereals'},
+  {CategoryID: 6, CategoryName: 'Meat/Poultry'},
+  {CategoryID: 7, CategoryName: 'Produce'},
+  {CategoryID: 8, CategoryName: 'Seafood'},
+]
 
 export const courseParticipants = [
   {
@@ -198,92 +231,8 @@ export const courseParticipants = [
     progress: 50,
   },
 ]
-export const todayPost = {
-  id: 1,
-  title: 'Today post',
-  created: '2021-01-24 09:00:00',
-}
 
-export const thisWeek = {
-  id: 1,
-  title: 'This week post',
-  created: '2021-01-23 09:00:00',
-}
-
-export const thisMonth = {
-  id: 1,
-  title: 'This month post',
-  created: '2021-01-15 09:00:00',
-}
-
-export const data = [
-  {
-    id: 1,
-    first_name: 'Jesse',
-    last_name: 'Simmons',
-    date: '2016/10/15 13:43:27',
-    gender: 'Male',
-  },
-  {
-    id: 2,
-    first_name: 'John',
-    last_name: 'Jacobs',
-    date: '2016/12/15 06:00:53',
-    gender: 'Male',
-  },
-  {
-    id: 3,
-    first_name: 'Tina',
-    last_name: 'Gilbert',
-    date: '2016/04/26 06:26:28',
-    gender: 'Female',
-  },
-  {
-    id: 4,
-    first_name: 'Clarence',
-    last_name: 'Flores',
-    date: '2016/04/10 10:28:46',
-    gender: 'Male',
-  },
-  {
-    id: 5,
-    first_name: 'Anne',
-    last_name: 'Lee',
-    date: '2016/12/06 14:38:38',
-    gender: 'Female',
-  },
-]
-
-export const columns = [
-  {
-    field: 'id',
-    label: 'ID',
-    width: '100',
-    numeric: true,
-    searchable: true,
-  },
-  {
-    field: 'first_name',
-    label: 'First Name',
-    searchable: true,
-  },
-  {
-    field: 'last_name',
-    label: 'Last Name',
-    searchable: true,
-  },
-  {
-    field: 'date',
-    label: 'Date',
-    centered: true,
-  },
-  {
-    field: 'gender',
-    label: 'Gender',
-  },
-]
-
-export const data2 = [
+export const movies = [
   {
     id: 1,
     user: {first_name: 'Jesse', last_name: 'Simmons'},
@@ -646,737 +595,548 @@ export const data2 = [
   },
 ]
 
-export const exampleColumns = ['name', 'code', 'uri']
-
-export const exampleData = [
+export const products = [
   {
-    code: 'ZW',
-    name: 'Zimbabwe',
-    created_at: '2015-04-24T01:46:50.459583',
-    updated_at: '2015-04-24T01:46:50.459593',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/245',
-    id: 245,
+    ProductID: 1,
+    ProductName: 'Tea',
+    CategoryID: 1,
+    QuantityPerUnit: '10 boxes x 20 bags',
+    UnitPrice: 18.0,
+    UnitsInStock: 39,
+    Discontinued: false,
   },
   {
-    code: 'ZM',
-    name: 'Zambia',
-    created_at: '2015-04-24T01:46:50.457459',
-    updated_at: '2015-04-24T01:46:50.457468',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/244',
-    id: 244,
+    ProductID: 7,
+    ProductName: 'Dried Pears',
+    CategoryID: 7,
+    QuantityPerUnit: '12 - 1 lb pkgs.',
+    UnitPrice: 30.0,
+    UnitsInStock: 15,
+    Discontinued: false,
   },
   {
-    code: 'YE',
-    name: 'Yemen',
-    created_at: '2015-04-24T01:46:50.454731',
-    updated_at: '2015-04-24T01:46:50.454741',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/243',
-    id: 243,
+    ProductID: 8,
+    ProductName: 'Cranberry Sauce',
+    CategoryID: 2,
+    QuantityPerUnit: '12 - 12 oz jars',
+    UnitPrice: 40.0,
+    UnitsInStock: 6,
+    Discontinued: false,
   },
   {
-    code: 'EH',
-    name: 'Western Sahara',
-    created_at: '2015-04-24T01:46:50.452002',
-    updated_at: '2015-04-24T01:46:50.452011',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/242',
-    id: 242,
+    ProductID: 9,
+    ProductName: 'Mishi Kobe Niku',
+    CategoryID: 6,
+    QuantityPerUnit: '18 - 500 g pkgs.',
+    UnitPrice: 97.0,
+    UnitsInStock: 29,
+    Discontinued: true,
   },
   {
-    code: 'WF',
-    name: 'Wallis & Futuna',
-    created_at: '2015-04-24T01:46:50.449346',
-    updated_at: '2015-04-24T01:46:50.449355',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/241',
-    id: 241,
+    ProductID: 14,
+    ProductName: 'Tofu',
+    CategoryID: 7,
+    QuantityPerUnit: '40 - 100 g pkgs.',
+    UnitPrice: 23.25,
+    UnitsInStock: 35,
+    Discontinued: false,
   },
   {
-    code: 'VN',
-    name: 'Vietnam',
-    created_at: '2015-04-24T01:46:50.446644',
-    updated_at: '2015-04-24T01:46:50.446652',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/240',
-    id: 240,
+    ProductID: 17,
+    ProductName: 'Alice Mutton',
+    CategoryID: 6,
+    QuantityPerUnit: '20 - 1 kg tins',
+    UnitPrice: 39.0,
+    UnitsInStock: 0,
+    Discontinued: false,
   },
   {
-    code: 'VE',
-    name: 'Venezuela',
-    created_at: '2015-04-24T01:46:50.444031',
-    updated_at: '2015-04-24T01:46:50.444040',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/239',
-    id: 239,
+    ProductID: 19,
+    ProductName: 'Teatime Biscuits',
+    CategoryID: 3,
+    QuantityPerUnit: '10 boxes x 12 pieces',
+    UnitPrice: 9.2,
+    UnitsInStock: 25,
+    Discontinued: false,
   },
   {
-    code: 'VU',
-    name: 'Vanuatu',
-    created_at: '2015-04-24T01:46:50.441423',
-    updated_at: '2015-04-24T01:46:50.441433',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/238',
-    id: 238,
+    ProductID: 40,
+    ProductName: 'Boston Crab Meat',
+    CategoryID: 8,
+    QuantityPerUnit: '24 - 4 oz tins',
+    UnitPrice: 18.4,
+    UnitsInStock: 123,
+    Discontinued: false,
   },
   {
-    code: 'UZ',
-    name: 'Uzbekistan',
-    created_at: '2015-04-24T01:46:50.438748',
-    updated_at: '2015-04-24T01:46:50.438757',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/237',
-    id: 237,
+    ProductID: 43,
+    ProductName: 'Coffee',
+    CategoryID: 1,
+    QuantityPerUnit: '16 - 500 g tins',
+    UnitPrice: 46.0,
+    UnitsInStock: 17,
+    Discontinued: false,
   },
   {
-    code: 'UY',
-    name: 'Uruguay',
-    created_at: '2015-04-24T01:46:50.435761',
-    updated_at: '2015-04-24T01:46:50.435770',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/236',
-    id: 236,
+    ProductID: 48,
+    ProductName: 'Chocolate',
+    CategoryID: 3,
+    QuantityPerUnit: '10 pkgs.',
+    UnitPrice: 12.75,
+    UnitsInStock: 15,
+    Discontinued: false,
   },
   {
-    code: 'VI',
-    name: 'United States Virgin Islands',
-    created_at: '2015-04-24T01:46:50.433229',
-    updated_at: '2015-04-24T01:46:50.433238',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/235',
-    id: 235,
+    ProductID: 56,
+    ProductName: 'Gnocchi di nonna Alice',
+    CategoryID: 5,
+    QuantityPerUnit: '24 - 250 g pkgs.',
+    UnitPrice: 38.0,
+    UnitsInStock: 21,
+    Discontinued: true,
   },
   {
-    code: 'US',
-    name: 'United States',
-    created_at: '2015-04-24T01:46:50.430335',
-    updated_at: '2015-04-24T01:46:50.430340',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/234',
-    id: 234,
+    ProductID: 57,
+    ProductName: 'Ravioli Angelo',
+    CategoryID: 5,
+    QuantityPerUnit: '24 - 250 g pkgs.',
+    UnitPrice: 19.5,
+    UnitsInStock: 36,
+    Discontinued: false,
   },
   {
-    code: 'GB',
-    name: 'United Kingdom',
-    created_at: '2015-04-24T01:46:50.427956',
-    updated_at: '2015-04-24T01:46:50.427961',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/233',
-    id: 233,
+    ProductID: 60,
+    ProductName: 'Camembert Pierrot',
+    CategoryID: 4,
+    QuantityPerUnit: '15 - 300 g rounds',
+    UnitPrice: 34.0,
+    UnitsInStock: 19,
+    Discontinued: true,
   },
   {
-    code: 'AE',
-    name: 'United Arab Emirates',
-    created_at: '2015-04-24T01:46:50.425383',
-    updated_at: '2015-04-24T01:46:50.425392',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/232',
-    id: 232,
+    ProductID: 65,
+    ProductName: 'Hot Pepper Sauce',
+    CategoryID: 2,
+    QuantityPerUnit: '32 - 8 oz bottles',
+    UnitPrice: 21.05,
+    UnitsInStock: 76,
+    Discontinued: false,
   },
   {
-    code: 'UA',
-    name: 'Ukraine',
-    created_at: '2015-04-24T01:46:50.422970',
-    updated_at: '2015-04-24T01:46:50.422980',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/231',
-    id: 231,
+    ProductID: 72,
+    ProductName: 'Mozzarella di Giovanni',
+    CategoryID: 4,
+    QuantityPerUnit: '24 - 200 g pkgs.',
+    UnitPrice: 34.8,
+    UnitsInStock: 14,
+    Discontinued: false,
   },
   {
-    code: 'UG',
-    name: 'Uganda',
-    created_at: '2015-04-24T01:46:50.419963',
-    updated_at: '2015-04-24T01:46:50.419968',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/230',
-    id: 230,
-  },
-  {
-    code: 'TV',
-    name: 'Tuvalu',
-    created_at: '2015-04-24T01:46:50.417896',
-    updated_at: '2015-04-24T01:46:50.417906',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/229',
-    id: 229,
-  },
-  {
-    code: 'TC',
-    name: 'Turks & Caicos Islands',
-    created_at: '2015-04-24T01:46:50.414854',
-    updated_at: '2015-04-24T01:46:50.414868',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/228',
-    id: 228,
-  },
-  {
-    code: 'TM',
-    name: 'Turkmenistan',
-    created_at: '2015-04-24T01:46:50.412601',
-    updated_at: '2015-04-24T01:46:50.412605',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/227',
-    id: 227,
-  },
-  {
-    code: 'TR',
-    name: 'Turkey',
-    created_at: '2015-04-24T01:46:50.411105',
-    updated_at: '2015-04-24T01:46:50.411110',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/226',
-    id: 226,
-  },
-  {
-    code: 'TN',
-    name: 'Tunisia',
-    created_at: '2015-04-24T01:46:50.409535',
-    updated_at: '2015-04-24T01:46:50.409539',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/225',
-    id: 225,
-  },
-  {
-    code: 'TT',
-    name: 'Trinidad & Tobago',
-    created_at: '2015-04-24T01:46:50.408030',
-    updated_at: '2015-04-24T01:46:50.408034',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/224',
-    id: 224,
-  },
-  {
-    code: 'TO',
-    name: 'Tonga',
-    created_at: '2015-04-24T01:46:50.406306',
-    updated_at: '2015-04-24T01:46:50.406311',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/223',
-    id: 223,
-  },
-  {
-    code: 'TK',
-    name: 'Tokelau',
-    created_at: '2015-04-24T01:46:50.404794',
-    updated_at: '2015-04-24T01:46:50.404799',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/222',
-    id: 222,
-  },
-  {
-    code: 'TG',
-    name: 'Togo',
-    created_at: '2015-04-24T01:46:50.403306',
-    updated_at: '2015-04-24T01:46:50.403310',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/221',
-    id: 221,
-  },
-  {
-    code: 'TH',
-    name: 'Thailand',
-    created_at: '2015-04-24T01:46:50.400840',
-    updated_at: '2015-04-24T01:46:50.400849',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/220',
-    id: 220,
-  },
-  {
-    code: 'TZ',
-    name: 'Tanzania',
-    created_at: '2015-04-24T01:46:50.397846',
-    updated_at: '2015-04-24T01:46:50.397855',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/219',
-    id: 219,
-  },
-  {
-    code: 'TJ',
-    name: 'Tajikistan',
-    created_at: '2015-04-24T01:46:50.394924',
-    updated_at: '2015-04-24T01:46:50.394933',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/218',
-    id: 218,
-  },
-  {
-    code: 'TW',
-    name: 'Taiwan',
-    created_at: '2015-04-24T01:46:50.391969',
-    updated_at: '2015-04-24T01:46:50.391978',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/217',
-    id: 217,
-  },
-  {
-    code: 'SY',
-    name: 'Syria',
-    created_at: '2015-04-24T01:46:50.389120',
-    updated_at: '2015-04-24T01:46:50.389124',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/216',
-    id: 216,
-  },
-  {
-    code: 'CH',
-    name: 'Switzerland',
-    created_at: '2015-04-24T01:46:50.386939',
-    updated_at: '2015-04-24T01:46:50.386943',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/215',
-    id: 215,
-  },
-  {
-    code: 'SE',
-    name: 'Sweden',
-    created_at: '2015-04-24T01:46:50.385345',
-    updated_at: '2015-04-24T01:46:50.385349',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/214',
-    id: 214,
-  },
-  {
-    code: 'SZ',
-    name: 'Swaziland',
-    created_at: '2015-04-24T01:46:50.383834',
-    updated_at: '2015-04-24T01:46:50.383838',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/213',
-    id: 213,
-  },
-  {
-    code: 'SR',
-    name: 'Suriname',
-    created_at: '2015-04-24T01:46:50.382073',
-    updated_at: '2015-04-24T01:46:50.382078',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/212',
-    id: 212,
-  },
-  {
-    code: 'SD',
-    name: 'Sudan',
-    created_at: '2015-04-24T01:46:50.380114',
-    updated_at: '2015-04-24T01:46:50.380119',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/211',
-    id: 211,
-  },
-  {
-    code: 'LK',
-    name: 'Sri Lanka',
-    created_at: '2015-04-24T01:46:50.378189',
-    updated_at: '2015-04-24T01:46:50.378195',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/210',
-    id: 210,
-  },
-  {
-    code: 'ES',
-    name: 'Spain',
-    created_at: '2015-04-24T01:46:50.376105',
-    updated_at: '2015-04-24T01:46:50.376109',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/209',
-    id: 209,
-  },
-  {
-    code: 'SS',
-    name: 'South Sudan',
-    created_at: '2015-04-24T01:46:50.373942',
-    updated_at: '2015-04-24T01:46:50.373946',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/208',
-    id: 208,
-  },
-  {
-    code: 'KR',
-    name: 'South Korea',
-    created_at: '2015-04-24T01:46:50.371790',
-    updated_at: '2015-04-24T01:46:50.371794',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/207',
-    id: 207,
-  },
-  {
-    code: 'GS',
-    name: 'South Georgia & The South Sandwish Islands',
-    created_at: '2015-04-24T01:46:50.369460',
-    updated_at: '2015-04-24T01:46:50.369465',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/206',
-    id: 206,
-  },
-  {
-    code: 'ZA',
-    name: 'South Africa',
-    created_at: '2015-04-24T01:46:50.367247',
-    updated_at: '2015-04-24T01:46:50.367252',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/205',
-    id: 205,
-  },
-  {
-    code: 'SO',
-    name: 'Somaliland',
-    created_at: '2015-04-24T01:46:50.362905',
-    updated_at: '2016-09-18T18:34:35.724427',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/204',
-    id: 204,
-  },
-  {
-    code: 'SB',
-    name: 'Solomon Islands',
-    created_at: '2015-04-24T01:46:50.360631',
-    updated_at: '2015-04-24T01:46:50.360635',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/203',
-    id: 203,
-  },
-  {
-    code: 'SI',
-    name: 'Slovenia',
-    created_at: '2015-04-24T01:46:50.358394',
-    updated_at: '2015-04-24T01:46:50.358399',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/202',
-    id: 202,
-  },
-  {
-    code: 'SK',
-    name: 'Slovakia',
-    created_at: '2015-04-24T01:46:50.356154',
-    updated_at: '2015-04-24T01:46:50.356158',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/201',
-    id: 201,
-  },
-  {
-    code: 'SX',
-    name: 'Sint Maarten',
-    created_at: '2015-04-24T01:46:50.353807',
-    updated_at: '2015-04-24T01:46:50.353811',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/200',
-    id: 200,
-  },
-  {
-    code: 'SG',
-    name: 'Singapore',
-    created_at: '2015-04-24T01:46:50.349354',
-    updated_at: '2015-04-24T01:46:50.349358',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/199',
-    id: 199,
-  },
-  {
-    code: 'SL',
-    name: 'Sierra Leone',
-    created_at: '2015-04-24T01:46:50.347186',
-    updated_at: '2015-04-24T01:46:50.347190',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/198',
-    id: 198,
-  },
-  {
-    code: 'SC',
-    name: 'Seychelles',
-    created_at: '2015-04-24T01:46:50.344980',
-    updated_at: '2015-04-24T01:46:50.344984',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/197',
-    id: 197,
-  },
-  {
-    code: 'RS',
-    name: 'Serbia',
-    created_at: '2015-04-24T01:46:50.342496',
-    updated_at: '2015-04-24T01:46:50.342501',
-    uri: 'http://api.lobbyfacts.eu/api/1/country/196',
-    id: 196,
+    ProductID: 73,
+    ProductName: 'Röd Kaviar',
+    CategoryID: 8,
+    QuantityPerUnit: '24 - 150 g jars',
+    UnitPrice: 15.0,
+    UnitsInStock: 101,
+    Discontinued: true,
   },
 ]
 
-export const exampleOptions = {
-  headings: {
-    name: 'Country Name',
-    code: 'Country Code',
-    uri: 'View Record',
+export const projects = [
+  {
+    id: 1,
+    projectNumber: '190701010641',
+    claimNumber: '123456',
+    serviceTechnician: '',
+    serviceType: 'Ladder Assist',
+    city: 'Atlanta',
+    state: 'GA',
+    zip: '30316',
+    region: 'Georgia',
+    area: 'Atlanta',
+    status: 'Assigned',
+    flagged: '',
+    date: '2021-06-21',
+    start: '06:00',
+    finish: '17:00',
+    carrier: {
+      name: '',
+      adjuster: '',
+    },
   },
-  editableColumns: ['name'],
-  sortable: ['name', 'code'],
-  filterable: ['name', 'code'],
+]
+
+export const projectStatuses = [
+  {
+    id: 1,
+    name: 'Triage',
+    count: 166,
+  },
+  {
+    id: 2,
+    name: 'Call Queue',
+    count: 270,
+  },
+  {
+    id: 3,
+    name: 'Schedule',
+    count: 1168,
+  },
+  {
+    id: 4,
+    name: 'Assigned',
+    count: 1039,
+  },
+  {
+    id: 5,
+    name: 'Confirmed',
+    count: 149,
+  },
+  {
+    id: 6,
+    name: 'Working',
+    count: 74,
+  },
+  {
+    id: 7,
+    name: 'Review',
+    count: 682,
+  },
+  {
+    id: 8,
+    name: 'Complete',
+    count: 30,
+  },
+  {
+    id: 9,
+    name: 'Billed',
+    count: 80,
+  },
+  {
+    id: 10,
+    name: 'Closed',
+    count: 113967,
+  },
+  {
+    id: 11,
+    name: 'Hold',
+    count: 250,
+  },
+  {
+    id: 12,
+    name: 'Archived',
+    count: 166,
+  },
+  {
+    id: 13,
+    name: 'Pending',
+    count: 251,
+  },
+]
+
+export const roles = [
+  {
+    id: 1,
+    name: 'Administrator',
+    userTypeId: 1,
+  },
+  {
+    id: 2,
+    name: 'Scheduler',
+    userTypeId: 1,
+  },
+  {
+    id: 3,
+    name: 'Admin Support',
+    userTypeId: 1,
+  },
+  {
+    id: 4,
+    name: 'Bookkeeper',
+    userTypeId: 1,
+  },
+  {
+    id: 5,
+    name: 'Service Tech',
+    userTypeId: 2,
+  },
+  {
+    id: 6,
+    name: 'Service Tech 2',
+    userTypeId: 2,
+  },
+  {
+    id: 7,
+    name: 'Service Manager',
+    userTypeId: 2,
+  },
+  {
+    id: 8,
+    name: 'Insurance Adjuster',
+    userTypeId: 3,
+  },
+  {
+    id: 9,
+    name: 'Billing Contact',
+    userTypeId: 3,
+  },
+  {
+    id: 10,
+    name: 'Adjuster Director',
+    userTypeId: 3,
+  },
+  {
+    id: 11,
+    name: 'Adjuster Manager',
+    userTypeId: 3,
+  },
+  {
+    id: 12,
+    name: 'Service Director',
+    userTypeId: 2,
+  },
+  {
+    id: 13,
+    name: 'EagleView',
+    userTypeId: 4,
+  },
+]
+
+export const serviceTypes = []
+
+export const team = [
+  {
+    id: 1,
+    name: 'Victor Tolbert',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'A Better Way to Learn',
+    lastActivity: '2021-01-29 00:00:00',
+    progress: 50,
+  },
+  {
+    id: 2,
+    name: 'Andy Cook',
+    imageUrl: '/assets/img/avatars/2.png',
+    course: 'Advocate Clinic Homework',
+    lastActivity: '2021-01-28T13:30:00',
+    progress: 50,
+  },
+  {
+    id: 3,
+    name: 'Patti Lytle',
+    imageUrl: '/assets/img/avatars/3.png',
+    course: 'Motivating and persuading',
+    lastActivity: '2021-01-27T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 4,
+    name: 'Jeff Johnson',
+    imageUrl: '/assets/img/avatars/4.png',
+    course: 'Learning as you go',
+    lastActivity: '2021-01-26T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 5,
+    name: 'Paul King',
+    imageUrl: '/assets/img/avatars/5.png',
+    course: 'The potential risks of advocacy',
+    lastActivity: '2021-01-25T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 6,
+    name: 'Sammy Davis',
+    imageUrl: '/assets/img/avatars/6.png',
+    course: 'Good strategy requires great tactics',
+    lastActivity: '2021-01-24T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 7,
+    name: 'Stepanie Fleet',
+    imageUrl: '/assets/img/avatars/7.png',
+    course: 'Motivating and persuading',
+    lastActivity: '2021-01-23T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 8,
+    name: 'Eric Reese',
+
+    imageUrl: '/assets/img/avatars/8.png',
+    course: 'A Better Way to Learn',
+    lastActivity: '2021-01-22T13:00:04',
+    progress: 50,
+  },
+  {
+    id: 9,
+    name: 'Pam Oliver',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'The potential risks of advocacy',
+    lastActivity: '2021-01-21T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 10,
+    name: 'Jing Chen',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'Good strategy requires great tactics',
+    lastActivity: '2021-01-20T13:00:00',
+    progress: 50,
+  },
+  {
+    id: 11,
+    name: 'Pamela James',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'Learning as you go',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 12,
+    name: 'Jerome Tippins',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'Motivating and persuading',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 13,
+    name: 'Craig Paulson',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'Good strategy requires great tactics',
+    lastActivity: '2021-01-04',
+    progress: 50,
+  },
+  {
+    id: 14,
+    name: 'Seymore Butts',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 15,
+    name: 'Zeb Boston',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'A Better Way to Learn',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 16,
+    name: 'Rebecca Gonzales',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'Motivating and persuading',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 17,
+    name: 'Mike Jones',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 18,
+    name: 'Jeremy Doublestein',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 19,
+    name: 'Brent Stephens',
+    imageUrl: '/assets/img/avatars/1.png',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 20,
+    imageUrl: '/assets/img/avatars/1.png',
+    name: 'Walter White',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 20,
+    imageUrl: '/assets/img/avatars/1.png',
+    name: 'Walter White',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+  {
+    id: 21,
+    imageUrl: '/assets/img/avatars/1.png',
+    name: 'Walter White',
+    course: 'All about Developmental Disablities',
+    lastActivity: '2021-01-14',
+    progress: 50,
+  },
+]
+
+export const users = [
+  {
+    id: 1,
+    user: {first_name: 'Jesse', last_name: 'Simmons'},
+    date: '2016/10/15 13:43:27',
+    gender: 'Male',
+  },
+]
+
+export const userTypes2 = [
+  {name: 'Administrator'},
+  {name: 'Insurance Adjuster'},
+  {name: 'Customer Service Representative'},
+  {name: 'Claims Representative'},
+  {name: 'Field Technician'},
+  {name: 'Carrier Staff'},
+  {name: 'Super User'},
+]
+
+export const userTypes3 = [
+  {id: 1, name: 'Application Users'},
+  {id: 2, name: 'Service Technicians'},
+  {id: 3, name: 'Insurance Adjusters'},
+  {id: 4, name: 'WebAPI Users'},
+]
+
+export const userTypes = [
+  {
+    Id: 1,
+    Name: 'Application Users',
+  },
+  {
+    Id: 2,
+    Name: 'Service Technicians',
+  },
+  {
+    Id: 3,
+    Name: 'Insurance Adjusters',
+  },
+  {
+    Id: 4,
+    Name: 'WebAPI Users',
+  },
+]
+
+const db = function () {
+  const data = {
+    users: [],
+  }
+
+  seedUsers(100, data)
+
+  return data
 }
 
-export const datasets = [
-  {
-    label: '# of Votes',
-    data: [12, 19, 3, 5, 2, 3],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-    ],
-    borderColor: [
-      'rgba(255, 99, 132, 1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)',
-    ],
-    borderWidth: 1,
-  },
-]
-
-export const labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
-
-export const tableData = [
-  {id: 1, name: 'John', age: '20'},
-  {id: 2, name: 'Jane', age: '24'},
-  {id: 3, name: 'Susan', age: '16'},
-  {id: 4, name: 'Chris', age: '55'},
-  {id: 5, name: 'Dan', age: '40'},
-]
-
-export const columns2 = ['id', 'name', 'age']
-
-export const detailData = [
-  {
-    name: 'Board Games',
-    sold: 131,
-    available: 301,
-    items: [
-      {
-        name: 'Monopoly',
-        sold: 57,
-        available: 100,
-      },
-      {
-        name: 'Scrabble',
-        sold: 23,
-        available: 84,
-      },
-      {
-        name: 'Chess',
-        sold: 37,
-        available: 61,
-      },
-      {
-        name: 'Battleships',
-        sold: 14,
-        available: 56,
-      },
-    ],
-  },
-  {
-    name: 'Jigsaws & Puzzles',
-    sold: 88,
-    available: 167,
-    items: [
-      {
-        name: 'World Map',
-        sold: 31,
-        available: 38,
-      },
-      {
-        name: 'London',
-        sold: 23,
-        available: 29,
-      },
-      {
-        name: 'Sharks',
-        sold: 20,
-        available: 44,
-      },
-      {
-        name: 'Disney',
-        sold: 14,
-        available: 56,
-      },
-    ],
-  },
-  {
-    name: 'Books',
-    sold: 434,
-    available: 721,
-    items: [
-      {
-        name: 'Hamlet',
-        sold: 101,
-        available: 187,
-      },
-      {
-        name: 'The Lord Of The Rings',
-        sold: 85,
-        available: 156,
-      },
-      {
-        name: 'To Kill a Mockingbird',
-        sold: 78,
-        available: 131,
-      },
-      {
-        name: 'Catch-22',
-        sold: 73,
-        available: 98,
-      },
-      {
-        name: 'Frankenstein',
-        sold: 51,
-        available: 81,
-      },
-      {
-        name: "Alice's Adventures In Wonderland",
-        sold: 46,
-        available: 68,
-      },
-    ],
-  },
-]
-
-export const dataDetails = [
-  {
-    name: 'Board Games',
-    sold: 131,
-    available: 301,
-    items: [
-      {
-        name: 'Monopoly',
-        sold: 57,
-        available: 100,
-      },
-      {
-        name: 'Scrabble',
-        sold: 23,
-        available: 84,
-      },
-      {
-        name: 'Chess',
-        sold: 37,
-        available: 61,
-      },
-      {
-        name: 'Battleships',
-        sold: 14,
-        available: 56,
-      },
-    ],
-  },
-  {
-    name: 'Jigsaws & Puzzles',
-    sold: 88,
-    available: 167,
-    items: [
-      {
-        name: 'World Map',
-        sold: 31,
-        available: 38,
-      },
-      {
-        name: 'London',
-        sold: 23,
-        available: 29,
-      },
-      {
-        name: 'Sharks',
-        sold: 20,
-        available: 44,
-      },
-      {
-        name: 'Disney',
-        sold: 14,
-        available: 56,
-      },
-    ],
-  },
-  {
-    name: 'Books',
-    sold: 434,
-    available: 721,
-    items: [
-      {
-        name: 'Hamlet',
-        sold: 101,
-        available: 187,
-      },
-      {
-        name: 'The Lord Of The Rings',
-        sold: 85,
-        available: 156,
-      },
-      {
-        name: 'To Kill a Mockingbird',
-        sold: 78,
-        available: 131,
-      },
-      {
-        name: 'Catch-22',
-        sold: 73,
-        available: 98,
-      },
-      {
-        name: 'Frankenstein',
-        sold: 51,
-        available: 81,
-      },
-      {
-        name: "Alice's Adventures In Wonderland",
-        sold: 46,
-        available: 68,
-      },
-    ],
-  },
-]
-
-export const option = {
-  title: {
-    text: 'Example',
-  },
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: {
-      type: 'cross',
-      label: {
-        backgroundColor: '#6a7985',
-      },
-    },
-  },
-  legend: {
-    data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎'],
-  },
-  toolbox: {
-    feature: {
-      saveAsImage: {},
-    },
-  },
-  grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
-    containLabel: true,
-  },
-  xAxis: [
-    {
-      type: 'category',
-      boundaryGap: false,
-      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-    },
-  ],
-  yAxis: [
-    {
-      type: 'value',
-    },
-  ],
-  series: [
-    {
-      name: '邮件营销',
-      type: 'line',
-      stack: '总量',
-      areaStyle: {},
-      data: [120, 132, 101, 134, 90, 230, 210],
-    },
-    {
-      name: '联盟广告',
-      type: 'line',
-      stack: '总量',
-      areaStyle: {},
-      data: [220, 182, 191, 234, 290, 330, 310],
-    },
-    {
-      name: '视频广告',
-      type: 'line',
-      stack: '总量',
-      areaStyle: {},
-      data: [150, 232, 201, 154, 190, 330, 410],
-    },
-    {
-      name: '直接访问',
-      type: 'line',
-      stack: '总量',
-      areaStyle: {},
-      data: [320, 332, 301, 334, 390, 330, 320],
-    },
-    {
-      name: '搜索引擎',
-      type: 'line',
-      stack: '总量',
-      label: {
-        show: true,
-        position: 'top',
-      },
-      areaStyle: {},
-      data: [820, 932, 901, 934, 1290, 1330, 1320],
-    },
-  ],
-}
-
-export const chartData = [
-  ['Jan', [4, 6]],
-  ['Feb', 2],
-  ['Mar', 10],
-  ['Apr', 5],
-  ['May', 3],
-]
-
-export const menus = [
-  {value: 'mr', text: 'Mr.'},
-  {value: 'mrs', text: 'Mrs.'},
-]
+export default db

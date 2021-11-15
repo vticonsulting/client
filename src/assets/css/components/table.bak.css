@@ -1,0 +1,62 @@
+.o-table {
+  @apply bg-transparent table-fixed;
+}
+
+.o-table .o-table__th {
+  @apply px-4 py-3 text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-gray-50 whitespace-nowrap;
+}
+
+.o-table .o-table__td {
+  @apply px-4 py-3;
+}
+
+/* .o-table .o-table__td {
+ @apply px-6 py-4 text-sm font-medium text-gray-900 dark:text-gray-50;
+} */
+
+/*
+.o-table__wrapper
+.o-table
+.o-table__th
+.o-table__td
+.o-table__pagination
+
+
+
+
+*/
+
+/* .o-table table tr.o-table-row-selected {
+  @apply px-4 py-2 font-bold rounded bg-opacity-90 text-primary-800 bg-primary-50;
+}
+
+.o-table .o-pagination-wrapper {
+  @apply mt-8;
+}
+
+.is-sticky-column-one {
+  @apply bg-primary-200 !important;
+  color: theme('colors.gray.900') !important;
+}
+
+.is-sticky-column-two {
+  background: #167df0 !important;
+  color: white !important;
+}
+
+.VueTables__child-row-toggler {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.VueTables__child-row-toggler--closed::before {
+  content: '+';
+}
+
+.VueTables__child-row-toggler--open::before {
+  content: '-';
+} */

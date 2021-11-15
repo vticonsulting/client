@@ -3,12 +3,10 @@
     <div class="col-span-3" id="calendar">
       <div class="calendar">
         <FullCalendar class="full-calendar" :options="config">
-          <template #eventContent="{timeText, event}">
+          <template #eventContent="{ timeText, event }">
             <span class="flex text-xs">
-              <b class="">{{ timeText }}</b>
-              <span class="ml-2 whitespace-normal break-word">
-                {{ event.title }}
-              </span>
+              <b class>{{ timeText }}</b>
+              <span class="ml-2 whitespace-normal break-word">{{ event.title }}</span>
             </span>
           </template>
         </FullCalendar>
@@ -26,7 +24,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -62,11 +60,11 @@ export default {
         weekends: this.weekendsVisible,
         plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
         headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay',
+          left: 'title',
+          center: '',
+          right: 'today prev,next',
         },
-        initialView: 'dayGridWeek',
+        initialView: 'timeGridDay',
         locale: 'en-us',
       }
     },
@@ -97,7 +95,7 @@ export default {
       }
 
       const id = (this.events.length + 1) * 10
-      const {start, end, date, allDay} = payload
+      const { start, end, date, allDay } = payload
 
       return this.createEvent({
         id,
@@ -113,7 +111,7 @@ export default {
       return this.onDateClick(payload)
     },
 
-    onEventClick({event}) {
+    onEventClick({ event }) {
       const confirmed = confirm(
         `Are you sure you want to delete the event '${event.title}'?`,
       )
@@ -125,7 +123,7 @@ export default {
       return this.deleteEvent(event.id)
     },
 
-    onEventDrop({event}) {
+    onEventDrop({ event }) {
       return this.updateEvent(event)
     },
   },

@@ -1,0 +1,33 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "*.{css,scss,js,png,gif,ico,jpg,svg}"
+    ]
+  },
+  "routes": [
+    {
+        "route": "/login",
+        "redirect": "/.auth/login/aad"
+    },
+    {
+        "route": "/logout",
+        "redirect": "/.auth/logout"
+    },
+    {
+        "route": "/*",
+        "allowedRoles": [
+          "contributor"
+        ]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/login"
+    }
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  }
+}

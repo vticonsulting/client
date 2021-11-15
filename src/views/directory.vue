@@ -1,11 +1,11 @@
 <script>
 export default {
   props: {
-    person: {
+    user: {
       type: Object,
       default: () => ({
         name: 'Charlee Tchividjian-Sherry',
-        photoUrl: '/assets/img/people/charlee.jpeg',
+        photoUrl: '/assets/img/users/charlee.jpeg',
         profileCover: '/assets/img/hero_families_1.jpg',
         email: 'charlee@example.com',
         title: 'Founder & CEO',
@@ -57,7 +57,6 @@ export default {
                     class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                   >
                     <BaseIconOutlined name="calendar" />
-
                     {{ $t('calendar') }}
                   </a>
 
@@ -91,7 +90,6 @@ export default {
                     class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                   >
                     <BaseIconOutlined name="map" />
-
                     {{ $t('office_map') }}
                   </a>
                 </div>
@@ -102,7 +100,6 @@ export default {
                     class="flex items-center px-2 py-2 text-base font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                   >
                     <BaseIconOutlined name="view-grid-add" />
-
                     {{ $t('apps') }}
                   </a>
 
@@ -122,21 +119,17 @@ export default {
                   <div>
                     <img
                       class="inline-block w-10 h-10 rounded-full"
-                      :src="person.photoUrl"
-                      :alt="person.name"
+                      :src="user.photoUrl"
+                      :alt="user.name"
                     />
                   </div>
                   <div class="ml-3">
                     <p
                       class="text-base font-medium text-gray-700 group-hover:text-gray-900"
-                    >
-                      {{ person.name }}
-                    </p>
+                    >{{ user.name }}</p>
                     <p
                       class="text-sm font-medium text-gray-500 group-hover:text-gray-700"
-                    >
-                      {{ $t('view_profile') }}
-                    </p>
+                    >{{ $t('view_profile') }}</p>
                   </div>
                 </div>
               </a>
@@ -152,9 +145,7 @@ export default {
       <div v-if="false" class="hidden lg:flex lg:flex-shrink-0">
         <div class="flex flex-col w-64">
           <!-- Sidebar component, swap this element with another sidebar if you like -->
-          <div
-            class="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200"
-          >
+          <div class="flex flex-col flex-1 h-0 bg-gray-100 border-r border-gray-200">
             <div class="flex flex-col flex-1 pt-5 pb-4 overflow-y-auto">
               <div v-if="false" class="flex items-center flex-shrink-0 px-4">
                 <BaseLogo name="promise-serves" />
@@ -200,11 +191,7 @@ export default {
                     href="#"
                     class="flex items-center px-2 py-2 text-sm font-medium text-gray-900 bg-gray-200 rounded-md hover:bg-gray-50 hover:text-gray-900 group"
                   >
-                    <BaseIconOutlined
-                      name="search-circle"
-                      class="w-6 h-6 mr-3 text-gray-500"
-                    />
-
+                    <BaseIconOutlined name="search-circle" class="w-6 h-6 mr-3 text-gray-500" />
                     {{ $t('directory') }}
                   </a>
 
@@ -279,23 +266,15 @@ export default {
               <a href="#" class="flex-shrink-0 block w-full group">
                 <div class="flex items-center">
                   <div>
-                    <img
-                      class="inline-block rounded-full h-9 w-9"
-                      :src="person.photoUrl"
-                      alt=""
-                    />
+                    <img class="inline-block rounded-full h-9 w-9" :src="user.photoUrl" alt />
                   </div>
                   <div class="ml-3">
                     <p
                       class="text-sm font-medium text-gray-700 group-hover:text-gray-900"
-                    >
-                      {{ person.name }}
-                    </p>
+                    >{{ user.name }}</p>
                     <p
                       class="text-xs font-medium text-gray-500 group-hover:text-gray-700"
-                    >
-                      {{ $t('view_profile') }}
-                    </p>
+                    >{{ $t('view_profile') }}</p>
                   </div>
                 </div>
               </a>
@@ -364,30 +343,22 @@ export default {
               <!-- Profile header -->
               <div>
                 <div>
-                  <img
-                    class="object-cover w-full h-32 lg:h-48"
-                    :src="person.profileCover"
-                    alt=""
-                  />
+                  <img class="object-cover w-full h-32 lg:h-48" :src="user.profileCover" alt />
                 </div>
                 <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
-                  <div
-                    class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5"
-                  >
+                  <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
                     <div class="flex">
                       <img
                         class="w-24 h-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-                        :src="person.photoUrl"
-                        alt=""
+                        :src="user.photoUrl"
+                        alt
                       />
                     </div>
                     <div
                       class="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1"
                     >
                       <div class="flex-1 min-w-0 mt-6 sm:hidden 2xl:block">
-                        <h1 class="text-2xl font-bold text-gray-900 truncate">
-                          {{ person.name }}
-                        </h1>
+                        <h1 class="text-2xl font-bold text-gray-900 truncate">{{ user.name }}</h1>
                       </div>
                       <div
                         class="flex flex-col mt-6 space-y-3 justify-stretch sm:flex-row sm:space-y-0 sm:space-x-4"
@@ -396,29 +367,21 @@ export default {
                           type="button"
                           class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         >
-                          <BaseIconSolid
-                            name="mail"
-                            class="w-5 h-5 mr-2 -ml-1 text-gray-400"
-                          />
+                          <BaseIconSolid name="mail" class="w-5 h-5 mr-2 -ml-1 text-gray-400" />
                           <span>{{ $t('message') }}</span>
                         </button>
                         <button
                           type="button"
                           class="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
                         >
-                          <BaseIconSolid
-                            name="phone"
-                            class="w-5 h-5 mr-2 -ml-1 text-gray-400"
-                          />
+                          <BaseIconSolid name="phone" class="w-5 h-5 mr-2 -ml-1 text-gray-400" />
                           <span>{{ $t('call') }}</span>
                         </button>
                       </div>
                     </div>
                   </div>
                   <div class="flex-1 hidden min-w-0 mt-6 sm:block 2xl:hidden">
-                    <h1 class="text-2xl font-bold text-gray-900 truncate">
-                      {{ person.name }}
-                    </h1>
+                    <h1 class="text-2xl font-bold text-gray-900 truncate">{{ user.name }}</h1>
                   </div>
                 </div>
               </div>
@@ -430,24 +393,18 @@ export default {
                     <nav class="flex -mb-px space-x-8" aria-label="Tabs">
                       <!-- Current: "border-primary-500 text-primary-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
                       <RouterLink
-                        :to="{name: 'profile'}"
+                        :to="{ name: 'profile' }"
                         class="px-1 py-4 text-sm font-medium text-gray-900 border-b-2 border-primary-500 whitespace-nowrap"
                         aria-current="page"
-                      >
-                        {{ $t('profile') }}
-                      </RouterLink>
+                      >{{ $t('profile') }}</RouterLink>
                       <RouterLink
-                        :to="{name: 'calendar'}"
+                        :to="{ name: 'calendar' }"
                         class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
-                      >
-                        {{ $t('calendar') }}
-                      </RouterLink>
+                      >{{ $t('calendar') }}</RouterLink>
                       <a
                         href="#"
                         class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap"
-                      >
-                        {{ $t('recognition') }}
-                      </a>
+                      >{{ $t('recognition') }}</a>
                     </nav>
                   </div>
                 </div>
@@ -457,71 +414,47 @@ export default {
               <div class="max-w-5xl px-4 mx-auto mt-6 sm:px-6 lg:px-8">
                 <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('phone') }}
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('phone') }}</dt>
                     <dd class="mt-1 text-sm text-gray-900">(555) 123-4567</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('email') }}
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      {{ person.email }}
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('email') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900">{{ user.email }}</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('title') }}
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      {{ person.title }}
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('title') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900">{{ user.title }}</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('team') }}
-                    </dt>
-                    <dd class="mt-1 text-sm text-gray-900">
-                      Product Development
-                    </dd>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('team') }}</dt>
+                    <dd class="mt-1 text-sm text-gray-900">Product Development</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('location') }}
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('location') }}</dt>
                     <dd class="mt-1 text-sm text-gray-900">San Francisco</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('sits') }}
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('sits') }}</dt>
                     <dd class="mt-1 text-sm text-gray-900">Oasis, 4th floor</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('salary') }}
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('salary') }}</dt>
                     <dd class="mt-1 text-sm text-gray-900">$145,000</dd>
                   </div>
 
                   <div class="sm:col-span-1">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('birthday') }}
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('birthday') }}</dt>
                     <dd class="mt-1 text-sm text-gray-900">June 8, 1990</dd>
                   </div>
 
                   <div class="sm:col-span-2">
-                    <dt class="text-sm font-medium text-gray-500">
-                      {{ $t('about') }}
-                    </dt>
+                    <dt class="text-sm font-medium text-gray-500">{{ $t('about') }}</dt>
                     <dd class="mt-1 text-sm text-gray-900 max-w-prose">
                       <p>
                         Tincidunt quam neque in cursus viverra orci, dapibus nec
@@ -545,9 +478,7 @@ export default {
 
               <!-- Team member list -->
               <div class="max-w-5xl px-4 pb-12 mx-auto mt-8 sm:px-6 lg:px-8">
-                <h2 class="text-sm font-medium text-gray-500">
-                  {{ $t('team_members') }}
-                </h2>
+                <h2 class="text-sm font-medium text-gray-500">{{ $t('team_members') }}</h2>
                 <div class="grid grid-cols-1 gap-4 mt-1 sm:grid-cols-2">
                   <div
                     class="relative flex items-center px-6 py-5 space-x-3 bg-white border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
@@ -556,21 +487,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Leslie Alexander
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Co-Founder / CEO
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Leslie Alexander</p>
+                        <p class="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
                       </a>
                     </div>
                   </div>
@@ -582,21 +506,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Michael Foster
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Co-Founder / CTO
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Michael Foster</p>
+                        <p class="text-sm text-gray-500 truncate">Co-Founder / CTO</p>
                       </a>
                     </div>
                   </div>
@@ -608,21 +525,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Dries Vincent
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Manager, Business Relations
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Dries Vincent</p>
+                        <p class="text-sm text-gray-500 truncate">Manager, Business Relations</p>
                       </a>
                     </div>
                   </div>
@@ -634,21 +544,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Lindsay Walton
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Front-end Developer
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Lindsay Walton</p>
+                        <p class="text-sm text-gray-500 truncate">Front-end Developer</p>
                       </a>
                     </div>
                   </div>
@@ -660,12 +563,10 @@ export default {
             class="flex-shrink-0 hidden border-r border-gray-200 xl:order-first xl:flex xl:flex-col w-96"
           >
             <div class="px-6 pt-6 pb-4">
-              <h2 class="text-lg font-medium text-gray-900">
-                {{ $t('directory') }}
-              </h2>
-              <p class="mt-1 text-sm text-gray-600">
-                {{ $t('search_directory_message', {count: '3,018'}) }}
-              </p>
+              <h2 class="text-lg font-medium text-gray-900">{{ $t('directory') }}</h2>
+              <p
+                class="mt-1 text-sm text-gray-600"
+              >{{ $t('search_directory_message', { count: '3,018' }) }}</p>
               <form class="flex mt-6 space-x-4" action="#">
                 <div class="flex-1 min-w-0">
                   <label for="search" class="sr-only">{{ $t('search') }}</label>
@@ -709,10 +610,7 @@ export default {
               </form>
             </div>
             <!-- Directory list -->
-            <nav
-              class="relative flex-1 min-h-0 overflow-y-auto"
-              aria-label="Directory"
-            >
+            <nav class="relative flex-1 min-h-0 overflow-y-auto" aria-label="Directory">
               <div
                 class="sticky top-0 z-10 px-6 py-1 text-sm font-medium text-gray-500 border-t border-b border-gray-200 bg-gray-50"
               >
@@ -727,22 +625,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Leslie Abbott
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Co-Founder / CEO
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Leslie Abbott</p>
+                        <p class="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
                       </a>
                     </div>
                   </div>
@@ -756,22 +647,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Hector Adams
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          VP, Marketing
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Hector Adams</p>
+                        <p class="text-sm text-gray-500 truncate">VP, Marketing</p>
                       </a>
                     </div>
                   </div>
@@ -785,22 +669,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Blake Alexander
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Account Coordinator
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Blake Alexander</p>
+                        <p class="text-sm text-gray-500 truncate">Account Coordinator</p>
                       </a>
                     </div>
                   </div>
@@ -814,22 +691,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Fabricio Andrews
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Senior Art Director
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Fabricio Andrews</p>
+                        <p class="text-sm text-gray-500 truncate">Senior Art Director</p>
                       </a>
                     </div>
                   </div>
@@ -850,22 +720,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1501031170107-cfd33f0cbdcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Angela Beaver
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Chief Strategy Officer
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Angela Beaver</p>
+                        <p class="text-sm text-gray-500 truncate">Chief Strategy Officer</p>
                       </a>
                     </div>
                   </div>
@@ -879,22 +742,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1506980595904-70325b7fdd90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Yvette Blanchard
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Studio Artist
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Yvette Blanchard</p>
+                        <p class="text-sm text-gray-500 truncate">Studio Artist</p>
                       </a>
                     </div>
                   </div>
@@ -908,22 +764,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1513910367299-bce8d8a0ebf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Lawrence Brooks
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Content Specialist
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Lawrence Brooks</p>
+                        <p class="text-sm text-gray-500 truncate">Content Specialist</p>
                       </a>
                     </div>
                   </div>
@@ -944,22 +793,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Jeffrey Clark
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Senior Art Director
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Jeffrey Clark</p>
+                        <p class="text-sm text-gray-500 truncate">Senior Art Director</p>
                       </a>
                     </div>
                   </div>
@@ -973,22 +815,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Kathryn Cooper
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Associate Creative Director
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Kathryn Cooper</p>
+                        <p class="text-sm text-gray-500 truncate">Associate Creative Director</p>
                       </a>
                     </div>
                   </div>
@@ -1009,22 +844,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Alicia Edwards
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Junior Copywriter
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Alicia Edwards</p>
+                        <p class="text-sm text-gray-500 truncate">Junior Copywriter</p>
                       </a>
                     </div>
                   </div>
@@ -1038,22 +866,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Benjamin Emerson
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Director, Print Operations
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Benjamin Emerson</p>
+                        <p class="text-sm text-gray-500 truncate">Director, Print Operations</p>
                       </a>
                     </div>
                   </div>
@@ -1067,19 +888,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Jillian Erics
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Jillian Erics</p>
                         <p class="text-sm text-gray-500 truncate">Designer</p>
                       </a>
                     </div>
@@ -1094,22 +910,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Chelsea Evans
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Human Resources Manager
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Chelsea Evans</p>
+                        <p class="text-sm text-gray-500 truncate">Human Resources Manager</p>
                       </a>
                     </div>
                   </div>
@@ -1130,22 +939,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Michael Gillard
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Co-Founder / CTO
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Michael Gillard</p>
+                        <p class="text-sm text-gray-500 truncate">Co-Founder / CTO</p>
                       </a>
                     </div>
                   </div>
@@ -1159,22 +961,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Dries Giuessepe
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Manager, Business Relations
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Dries Giuessepe</p>
+                        <p class="text-sm text-gray-500 truncate">Manager, Business Relations</p>
                       </a>
                     </div>
                   </div>
@@ -1195,22 +990,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1507101105822-7472b28e22ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Jenny Harrison
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Studio Artist
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Jenny Harrison</p>
+                        <p class="text-sm text-gray-500 truncate">Studio Artist</p>
                       </a>
                     </div>
                   </div>
@@ -1224,22 +1012,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Lindsay Hatley
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Front-end Developer
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Lindsay Hatley</p>
+                        <p class="text-sm text-gray-500 truncate">Front-end Developer</p>
                       </a>
                     </div>
                   </div>
@@ -1253,22 +1034,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Anna Hill
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Partner, Creative
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Anna Hill</p>
+                        <p class="text-sm text-gray-500 truncate">Partner, Creative</p>
                       </a>
                     </div>
                   </div>
@@ -1289,19 +1063,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Courtney Samuels
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Courtney Samuels</p>
                         <p class="text-sm text-gray-500 truncate">Designer</p>
                       </a>
                     </div>
@@ -1316,22 +1085,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Tom Simpson
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Director, Product Development
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Tom Simpson</p>
+                        <p class="text-sm text-gray-500 truncate">Director, Product Development</p>
                       </a>
                     </div>
                   </div>
@@ -1352,22 +1114,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Floyd Thompson
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Principal Designer
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Floyd Thompson</p>
+                        <p class="text-sm text-gray-500 truncate">Principal Designer</p>
                       </a>
                     </div>
                   </div>
@@ -1381,22 +1136,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Leonard Timmons
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Senior Designer
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Leonard Timmons</p>
+                        <p class="text-sm text-gray-500 truncate">Senior Designer</p>
                       </a>
                     </div>
                   </div>
@@ -1410,19 +1158,14 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Whitney Trudeau
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Whitney Trudeau</p>
                         <p class="text-sm text-gray-500 truncate">Copywriter</p>
                       </a>
                     </div>
@@ -1444,22 +1187,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Kristin Watson
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          VP, Human Resources
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Kristin Watson</p>
+                        <p class="text-sm text-gray-500 truncate">VP, Human Resources</p>
                       </a>
                     </div>
                   </div>
@@ -1473,22 +1209,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Emily Wilson
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          VP, User Experience
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Emily Wilson</p>
+                        <p class="text-sm text-gray-500 truncate">VP, User Experience</p>
                       </a>
                     </div>
                   </div>
@@ -1509,22 +1238,15 @@ export default {
                       <img
                         class="w-10 h-10 rounded-full"
                         src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
+                        alt
                       />
                     </div>
                     <div class="flex-1 min-w-0">
                       <a href="#" class="focus:outline-none">
                         <!-- Extend touch target to entire panel -->
-                        <span
-                          class="absolute inset-0"
-                          aria-hidden="true"
-                        ></span>
-                        <p class="text-sm font-medium text-gray-900">
-                          Emma Young
-                        </p>
-                        <p class="text-sm text-gray-500 truncate">
-                          Senior Front-end Developer
-                        </p>
+                        <span class="absolute inset-0" aria-hidden="true"></span>
+                        <p class="text-sm font-medium text-gray-900">Emma Young</p>
+                        <p class="text-sm text-gray-500 truncate">Senior Front-end Developer</p>
                       </a>
                     </div>
                   </div>

@@ -2,7 +2,7 @@
   <OTabs type="boxed" v-model="activeTab" expanded :animated="false">
     <OTabItem>
       <template slot="header">
-        <h2 class="text-lg">{{ participantsTitle }}</h2>
+        <h2 class="text-lg">{{ title }}</h2>
       </template>
 
       <article>
@@ -16,18 +16,15 @@
         <h2 class="text-lg">{{ coursesTitle }}</h2>
       </template>
 
-      <BaseVideo id="dFoLwGNWl98" />
-
-      REWRITE: Why Basecamp 3 is a brand new code base, the evolution of code,
+      <BaseVideo id="dFoLwGNWl98" />REWRITE: Why Basecamp 3 is a brand new code base, the evolution of code,
       transcendent software, and executing your very best ideas. About David
       Creator of Ruby on Rails, partner at 37signals, best-selling author,
       https://signalvnoise.com/posts/3959-rewrite-why-basecamp-3-is-a-brand-new-code
       October 12 2015
-
       <iframe
         allowtransparency="true"
         title="Wistia video player"
-        allowFullscreen
+        allowfullscreen
         frameborder="0"
         scrolling="no"
         class="wistia_embed"
@@ -71,7 +68,7 @@ export default {
     return {
       courses: ['Parenting', 'Life Coaching', 'Therapy', 'CARE Teams'],
       activeTab: 1,
-      people: null,
+      users: null,
       isCardModalActive: false,
       isFullwidth: false,
       isImageModalActive: false,
@@ -83,15 +80,15 @@ export default {
   },
   async mounted() {
     try {
-      let response = await this.$axios.get('/people')
-      this.people = response.data
+      let response = await this.$axios.get('users')
+      this.users = response.data
     } catch (err) {
       console.log(err)
     }
   },
   computed: {
-    participantsTitle() {
-      return this.$t('participants')
+    title() {
+      return this.$t('projects')
     },
     coursesTitle() {
       return this.$t('courses')

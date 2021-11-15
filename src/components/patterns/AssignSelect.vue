@@ -1,15 +1,13 @@
 <template>
-  <div class="w-full max-w-xs">
-    Listbox
-  </div>
+  <div class="w-full max-w-xs">Listbox</div>
 </template>
 
 <script>
-import {ref} from '@vue/composition-api'
+import { ref } from '@vue/composition-api'
 
 export default {
   setup() {
-    const people = [
+    const users = [
       'Wade Cooper',
       'Arlene Mccoy',
       'Devon Webb',
@@ -22,11 +20,11 @@ export default {
       'Emil Schaefer',
     ]
 
-    const selectedPerson = ref(people[0])
+    const selectedPerson = ref(users[0])
 
     return {
       selectedPerson,
-      people,
+      users,
     }
   },
 }

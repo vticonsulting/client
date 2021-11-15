@@ -1,0 +1,35 @@
+@layer base {
+  :root {
+    /* Full Calendar */
+    --fc-border-color: var(--color-black);
+    --fc-daygrid-event-dot-width: 5px;
+    --fc-small-font-size: 0.85em;
+    --fc-page-bg-color:  var(--color-white);
+    --fc-neutral-bg-color: hsla(0, 0%, 81.6%, 0.3);
+    --fc-neutral-text-color: hsla(0, 0%, 50%, 1);
+    --fc-border-color: hsla(0, 0%, 87%, 1);
+    --fc-button-text-color:  var(--color-white);
+    --fc-button-bg-color: var(--color-primary);
+    --fc-button-border-color: var(--color-primary);
+    --fc-button-hover-bg-color: hsla(12, 55%, 50%, 1);
+    --fc-button-hover-border-color: hsla(12, 55%, 50%, 1);
+    --fc-button-active-bg-color: hsla(12, 55%, 41%, 1);
+    --fc-button-active-border-color: hsla(12, 55%, 41%, 1);
+    --fc-event-bg-color: var(--color-primary);
+    --fc-event-border-color: var(--color-primary);
+    --fc-event-text-color:  var(--color-white);
+    --fc-event-selected-overlay-color: hsla(0, 0%, 0%, 0.25);
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+    --fc-non-business-color: hsla(0, 0%, 84.3%, 0.3);
+    --fc-bg-event-color: hsla(112, 59%, 69%, 1);
+    --fc-bg-event-opacity: 0.3;
+    --fc-highlight-color: hsla(190, 65%, 84%, 0.3);
+    --fc-today-bg-color: hsla(180, 11%, 91%, 1);
+    --fc-now-indicator-color: hsla(0, 100%, 50%, 1);
+    --fc-daygrid-event-dot-width: 8px;
+    --fc-list-event-dot-width: 10px;
+    --fc-list-event-hover-bg-color: hsla(0, 0%, 96%, 1);
+  }
+}

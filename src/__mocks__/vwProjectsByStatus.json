@@ -1,0 +1,50 @@
+[
+  {
+    "State": "Triage",
+    "NumberOfProjects": 176
+  },
+  {
+    "State": "Call Queue",
+    "NumberOfProjects": 299
+  },
+  {
+    "State": "Schedule",
+    "NumberOfProjects": 1197
+  },
+  {
+    "State": "Assigned",
+    "NumberOfProjects": 1071
+  },
+  {
+    "State": "Confirmed",
+    "NumberOfProjects": 149
+  },
+  {
+    "State": "Working",
+    "NumberOfProjects": 74
+  },
+  {
+    "State": "Review",
+    "NumberOfProjects": 645
+  },
+  {
+    "State": "Complete",
+    "NumberOfProjects": 30
+  },
+  {
+    "State": "Billed",
+    "NumberOfProjects": 81
+  },
+  {
+    "State": "Closed",
+    "NumberOfProjects": 113993
+  },
+  {
+    "State": "Hold",
+    "NumberOfProjects": 256
+  },
+  {
+    "State": "Pending",
+    "NumberOfProjects": 263
+  }
+]

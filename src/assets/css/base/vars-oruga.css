@@ -1,0 +1,46 @@
+@layer base {
+  :root {
+    /* Oruga */
+    --oruga-variant-primary: var(--color-primary);
+    --oruga-variant-secondary: var(--color-secondary);
+    --oruga-variant-danger: var(--color-danger);
+
+    --oruga-color-primary: var(--color-primary);
+    --oruga-color-primary-invert: var(--color-white);
+    --oruga-color-primary-invert: var(--color-primary-invert);
+    --oruga-color-secondary: var(--color-secondary);
+
+    --oruga-color-danger: var(--color-danger);
+    --oruga-color-warning: var(--color-warning);
+    --oruga-color-success: var(--color-success);
+    --oruga-color-info: var(--color-info);
+    --oruga-color-info-invert: var(--color-info);
+
+
+    --oruga-button-background-color: transparent;
+    /* --oruga-button-background-color: var(--oruga-variant-primary); */
+    --oruga-base-border-radius: 0.5rem;
+
+    --oruga-checkbox-active-background-color: var(--color-primary);
+    --oruga-dropdown-item-background-active: var(--color-primary);
+    --oruga-pagination-link-current-background-color: var(--color-primary);
+    --oruga-pagination-link-current-border-color: var(--color-primary);
+    --oruga-radio-active-background-color: var(--color-primary);
+
+    --oruga-sidebar-width: 450px;
+    --oruga-sidebar-content-background-color: hsla(210, 20%, 98%, 1);
+
+    --oruga-steps-active-color: var(--color-primary);
+    --oruga-steps-previous-color: var(--color-primary);
+    --oruga-switch-active-background-color: var(--color-primary);
+    --oruga-table-detail-chevron-color: var(--color-primary);
+    --oruga-table-focus-border-color: var(--color-primary);
+    --oruga-table-row-active-background-color: var(--color-primary);
+    --oruga-tabs-link-active-border-bottom-color: var(--color-primary);
+    --oruga-tabs-link-active-color: var(--color-primary);
+    --oruga-tabs-toggle-link-active-background-color: var(--color-primary);
+    --oruga-tabs-toggle-link-active-border-color: var(--color-primary);
+    --oruga-tabs-toggle-link-active-color: hsla(0, 0%, 100%, 1);
+    --oruga-tooltip-background-color: var(--color-primary);
+  }
+}

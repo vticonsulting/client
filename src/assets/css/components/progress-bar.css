@@ -1,0 +1,20 @@
+@layer components {
+  .progress-bar {
+      width: 100%;
+      border-radius: 9999px;
+      position: relative;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      height: 12px;
+      background: #c6c6c6;
+  }
+
+  .progress-bar > div {
+      border-radius: 9999px;
+      position: absolute;
+      height: 100%;
+      background-color: #09848d;
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease;
+  }
+}

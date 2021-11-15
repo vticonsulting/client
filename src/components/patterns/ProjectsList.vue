@@ -1,42 +1,237 @@
 <template>
-  <div>
-    <div class="px-4 sm:px-6">
-      <h2 class="text-xs font-medium tracking-wide text-gray-500 uppercase">
-        Projects
-      </h2>
-    </div>
-    <ul class="mt-3 border-t border-gray-200 divide-y divide-gray-100">
+  <div class="overflow-hidden bg-white shadow sm:rounded-md">
+    <ul class="divide-y divide-gray-200">
       <li>
-        <a
-          href="#"
-          class="flex items-center justify-between px-4 py-4 group hover:bg-gray-50 sm:px-6"
-        >
-          <span class="flex items-center space-x-3 truncate">
-            <span
-              class="w-2.5 h-2.5 flex-shrink-0 rounded-full bg-pink-600"
-              aria-hidden="true"
-            ></span>
-            <span class="text-sm font-medium leading-6 truncate">
-              GraphQL API
-              <span class="font-normal text-gray-500 truncate"
-                >in Engineering</span
+        <a href="#" class="block hover:bg-gray-50">
+          <div class="flex items-center px-4 py-4 sm:px-6">
+            <div class="flex items-center flex-1 min-w-0">
+              <div class="flex-shrink-0">
+                <img
+                  class="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt
+                />
+              </div>
+              <div class="flex-1 min-w-0 px-4 md:grid md:grid-cols-2 md:gap-4">
+                <div>
+                  <p class="text-sm font-medium truncate text-primary-600">Ricardo Cooper</p>
+                  <p class="flex items-center mt-2 text-sm text-gray-500">
+                    <!-- Heroicon name: mail -->
+                    <svg
+                      class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                      />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span class="truncate">ricardo.cooper@example.com</span>
+                  </p>
+                </div>
+                <div class="hidden md:block">
+                  <div>
+                    <p class="text-sm text-gray-900">
+                      Last activity on
+                      <time datetime="2020-01-07">January 7, 2020</time>
+                    </p>
+                    <p class="flex items-center mt-2 text-sm text-gray-500">
+                      <!-- Heroicon name: check-circle -->
+                      <svg
+                        class="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      Completed phone screening
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- Heroicon name: chevron-right -->
+              <svg
+                class="w-5 h-5 text-gray-400"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
               >
-            </span>
-          </span>
-          <svg
-            class="w-5 h-5 ml-4 text-gray-400 group-hover:text-gray-500"
-            x-description="Heroicon name: chevron-right"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="block hover:bg-gray-50">
+          <div class="flex items-center px-4 py-4 sm:px-6">
+            <div class="flex items-center flex-1 min-w-0">
+              <div class="flex-shrink-0">
+                <img
+                  class="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt
+                />
+              </div>
+              <div class="flex-1 min-w-0 px-4 md:grid md:grid-cols-2 md:gap-4">
+                <div>
+                  <p class="text-sm font-medium truncate text-primary-600">Kristen Ramos</p>
+                  <p class="flex items-center mt-2 text-sm text-gray-500">
+                    <!-- Heroicon name: mail -->
+                    <svg
+                      class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                      />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span class="truncate">kristen.ramos@example.com</span>
+                  </p>
+                </div>
+                <div class="hidden md:block">
+                  <div>
+                    <p class="text-sm text-gray-900">
+                      Last activity on
+                      <time datetime="2020-01-07">January 7, 2020</time>
+                    </p>
+                    <p class="flex items-center mt-2 text-sm text-gray-500">
+                      <!-- Heroicon name: check-circle -->
+                      <svg
+                        class="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      Completed phone screening
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- Heroicon name: chevron-right -->
+              <svg
+                class="w-5 h-5 text-gray-400"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="block hover:bg-gray-50">
+          <div class="flex items-center px-4 py-4 sm:px-6">
+            <div class="flex items-center flex-1 min-w-0">
+              <div class="flex-shrink-0">
+                <img
+                  class="w-12 h-12 rounded-full"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt
+                />
+              </div>
+              <div class="flex-1 min-w-0 px-4 md:grid md:grid-cols-2 md:gap-4">
+                <div>
+                  <p class="text-sm font-medium truncate text-primary-600">Ted Fox</p>
+                  <p class="flex items-center mt-2 text-sm text-gray-500">
+                    <!-- Heroicon name: mail -->
+                    <svg
+                      class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                      />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span class="truncate">ted.fox@example.com</span>
+                  </p>
+                </div>
+                <div class="hidden md:block">
+                  <div>
+                    <p class="text-sm text-gray-900">
+                      Last activity on
+                      <time datetime="2020-01-07">January 7, 2020</time>
+                    </p>
+                    <p class="flex items-center mt-2 text-sm text-gray-500">
+                      <!-- Heroicon name: check-circle -->
+                      <svg
+                        class="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      Completed phone screening
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- Heroicon name: chevron-right -->
+              <svg
+                class="w-5 h-5 text-gray-400"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
         </a>
       </li>
     </ul>

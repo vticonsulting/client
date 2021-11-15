@@ -1,19 +1,11 @@
-.input {
-  @apply w-full px-3 py-2 leading-tight text-gray-500 border appearance-none;
+.input-field {
+  @apply relative;
 }
 
-.input-danger {
-  @apply border-red-500;
+.input-field .input {
+  @apply block w-full px-3 py-2 mt-1 dark:bg-black border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500;
 }
 
-.o-ctrl-input {
-  @apply block w-full border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500 !important;
-}
-
-.input {
-  @apply w-full px-3 py-2 leading-tight border shadow appearance-none text-main dark:text-main-dark dark:bg-main;
-}
-
-.input-danger {
-  @apply border-highlight;
+.input-field.is-expanded .input {
+  @apply w-full;
 }

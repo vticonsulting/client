@@ -10,9 +10,7 @@
         aria-haspopup="true"
         inverted
         variant="primary"
-      >
-        {{ $t('quick_links') }}
-      </OButton>
+      >{{ $t('quick_links') }}</OButton>
     </div>
 
     <!-- Dropdown -->
@@ -42,7 +40,7 @@
       }
       enter-active-class="animate__animated animate__tada"
       leave-active-class="animate__animated animate__bounceOutRight"
-     -->
+    -->
     <Transition
       enter-class="scale-95 opacity-0"
       enter-active-class="transition duration-200 ease-out transform scale-95 opacity-0"
@@ -60,98 +58,17 @@
       >
         <RouterLink
           v-if="false"
-          :to="{name: 'profile'}"
+          :to="{ name: 'profile' }"
           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
           role="menuitem"
-        >
-          {{ $t('my_profile') }}
-        </RouterLink>
-
-        <RouterLink
-          v-if="false"
-          :to="{name: 'requests'}"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          role="menuitem"
-        >
-          {{ $t('my_voluteer_requests') }}
-        </RouterLink>
-
-        <RouterLink
-          v-if="false"
-          :to="{name: 'requests'}"
-          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          role="menuitem"
-        >
-          {{ $t('church_voluteer_requests') }}
-        </RouterLink>
-
-        <button
-          data-toggle="modal"
-          data-target="#modal-calendar-event-details"
-          class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-          data-mode="add"
-          role="menuitem"
-        >
-          {{ $t('add_an_event') }}
-        </button>
-
-        <button
-          data-toggle="modal"
-          data-target="#modal-notify"
-          class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-          target="_blank"
-          data-ajaxurl="http://promiseserves.test/dashboard/ajax_make_quick_link"
-          data-modalheader="Refer a Family Link"
-          role="menuitem"
-        >
-          {{ $t('refer_a_family_link') }}
-        </button>
-
-        <button
-          data-toggle="modal"
-          data-target="#modal-notify"
-          class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-          target="_blank"
-          data-ajaxurl="http://promiseserves.test/dashboard/ajax_make_quick_link?type=request-cc"
-          data-modalheader="Request a Care Community Link"
-          role="menuitem"
-        >
-          {{ $t('request_cc_link') }}
-        </button>
-
-        <button
-          data-toggle="modal"
-          data-target="#modal-notify"
-          class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-          target="_blank"
-          data-ajaxurl="http://promiseserves.test/dashboard/ajax_make_quick_howto?type=request-cc"
-          data-modalheader="<h2>FAQ, How-to &amp; Help</h2>"
-          data-modalclass="modal-lg"
-          role="menuitem"
-        >
-          {{ $t('support_link_text') }}
-        </button>
-
-        <button
-          href="#modal-notify"
-          data-toggle="modal"
-          data-target="#modal-notify"
-          class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100"
-          data-ajaxurl="http://promiseserves.test/people/ajax_edit_person?f=11"
-          data-modalheader="<h2>Add a Person</h2>"
-          data-modalclass="modal-lg"
-        >
-          {{ $t('add_a_person') }}
-        </button>
+        >{{ $t('my_profile') }}</RouterLink>
 
         <form v-if="false" method="POST" action="#">
           <button
             type="submit"
             class="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
             role="menuitem"
-          >
-            {{ $t('logout') }}
-          </button>
+          >{{ $t('logout') }}</button>
         </form>
       </div>
     </Transition>

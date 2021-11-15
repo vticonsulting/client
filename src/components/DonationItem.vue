@@ -4,23 +4,17 @@
     :name="name"
   >
     <span class="flex flex-col mb-4 flex-no-shrink md:mr-8 md:mb-0">
-      <img
-        v-bind="imageSources"
-        :alt="name"
-        class="border border-gray-500 rounded-full"
-      />
+      <img v-bind="imageSources" :alt="name" class="border border-gray-500 rounded-full" />
     </span>
     <span class="text-center md:text-left">
-      <span class="block py-3 text-2xl font-bold">
-        {{ textPrice }} — {{ name }}
-      </span>
+      <span class="block py-3 text-2xl font-bold">{{ textPrice }} — {{ name }}</span>
       <span v-text="description" />
     </span>
   </button>
 </template>
 
 <script>
-import {computed} from '@vue/composition-api'
+import { computed } from '@vue/composition-api'
 
 export default {
   props: {

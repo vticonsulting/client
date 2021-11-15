@@ -1,50 +1,90 @@
-.o-button.o-color-secondary {
-  border-color: transparent;
-  background-color: var(--oruga-color-secondary, hsla(109, 0%, 67%, 1));
-  color: var(--oruga-color-invert-secondary, theme('colors.white'));
-}
+@layer components {
+  .button {
+    @apply border font-medium rounded-md py-1 px-4 hover:bg-gray-100;
+  }
+  .button.is-primary {
+    @apply bg-primary-500 text-white;
+  }
+  .button.is-success {
+    @apply bg-green-500 text-white;
+  }
+  .button.is-warning {
+    @apply bg-orange-500 text-white;
+  }
+  .button.is-danger {
+    @apply bg-red-500 text-white;
+  }
+  .button.is-info {
+    @apply bg-light-blue-500 text-white;
+  }
 
-.o-button.o-color-tertiary {
-  border-color: transparent;
-  background-color: var(--oruga-color-tertiary, hsla(109, 0%, 67%, 1));
-  color: var(--oruga-color-invert-tertiary, theme('colors.white'));
-}
+  .button.is-rounded {
+    @apply rounded-full;
+  }
 
-.o-button {
-  @apply border border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
-  @apply border border-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
-}
+  .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
 
-.o-button.o-color-danger {
-  @apply focus:ring-danger;
-}
+  .buttons a:not(:last-of-type),
+  .buttons button:not(:last-of-type) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
 
-.o-button.o-button-rounded {
-  @apply rounded-2xl;
-}
+  .btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #09848d;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.875rem;
+    border-width: 2px;
+    border-color: #09848d;
+    letter-spacing: 0.2;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
 
-/* Button */
-.btn {
-  outline: none !important;
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
-}
+  .btn:hover {
+    background: rgba(37, 142, 149, 0.96);
+    border-color: rgba(37, 142, 149, 0.96);
+  }
 
-.btn-rounded {
-  @apply rounded-full;
-}
+  .btn:disabled {
+    background-color: #127077;
+    border-color: #127077;
+    color: #9fc1c3;
+  }
 
-.btn-outlined-primary {
-  @apply px-4 py-2 font-semibold text-blue-700 bg-transparent border border-blue-500;
-}
+  .btn-outlined {
+    display: inline-block;
+    color: #09848d;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.875rem;
+    position: relative;
+    border-width: 2px;
+    border-color: #09848d;
+    letter-spacing: 0.2;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
 
-.btn-outlined-primary:hover {
-  @apply px-4 py-2 font-bold text-white bg-blue-500 rounded;
-}
-
-.btn-disabled {
-  @apply opacity-50 cursor-not-allowed;
-}
-
-.btn {
-  @apply px-4 py-2 font-bold rounded text-highlight bg-highlight-background dark:text-highlight-dark dark:bg-highlight-background-dark;
+  .btn-outlined:hover {
+    color: #fff;
+    background: rgba(37, 142, 149, 0.96);
+    border-color: rgba(37, 142, 149, 0.96);
+  }
 }

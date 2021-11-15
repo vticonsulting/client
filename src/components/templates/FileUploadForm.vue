@@ -1,6 +1,6 @@
 <template>
   <form class="max-w-screen-sm" enctype="multipart/form-data">
-    <h2 class="text-lg font-medium text-gray-600">File Upload</h2>
+    <h2 v-if="false" class="text-lg font-medium text-gray-600">File Upload</h2>
 
     <div v-if="location" class="p-4 rounded-md bg-green-50">
       <div class="flex">
@@ -21,9 +21,7 @@
           </svg>
         </div>
         <div class="ml-3">
-          <p class="text-sm font-medium text-green-800">
-            Successfully uploaded
-          </p>
+          <p class="text-sm font-medium text-green-800">Successfully uploaded</p>
         </div>
         <div class="pl-3 ml-auto">
           <div class="-mx-1.5 -my-1.5">
@@ -51,20 +49,13 @@
       </div>
     </div>
 
-    <input
-      @change="onFileSelected"
-      type="file"
-      style="display: none"
-      ref="fileInput"
-    />
+    <input @change="onFileSelected" type="file" style="display: none" ref="fileInput" />
 
     <div class="mt-4" v-if="selectedFile">
       <label
         for="file-name"
         class="block text-xs font-medium tracking-wider text-gray-700 uppercase"
-      >
-        File Name
-      </label>
+      >File Name</label>
       <input
         id="file-name"
         name="file_name"
@@ -86,16 +77,14 @@
         @click="onSelectFile"
         type="button"
         class="inline-flex items-center px-6 py-3 text-base font-medium border border-transparent rounded-md shadow-sm bg-primary-100 text-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-      >
-        Select file
-      </button>
+      >Select file</button>
 
       <button
         @click="onUpload"
         v-if="selectedFile"
         type="button"
         :class="[
-          {'cursor-not-allowed disabled:opacity-50': isUploading},
+          { 'cursor-not-allowed disabled:opacity-50': isUploading },
           'inline-flex items-center px-6 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500',
         ]"
         :disabled="isUploading"
@@ -103,15 +92,12 @@
         <svg
           :class="[
             'w-5 h-5 mr-2 -ml-1 text-white',
-            {'animate-spin': isUploading},
+            { 'animate-spin': isUploading },
           ]"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
-          <path
-            v-if="isUploading"
-            d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z"
-          />
+          <path v-if="isUploading" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
           <path v-else d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z" />
         </svg>
         Upload
@@ -122,15 +108,13 @@
       v-if="location"
       class="block px-3 py-2 mt-4 text-blue-500 underline border"
       :href="location"
-    >
-      {{ location }}
-    </a>
+    >{{ location }}</a>
   </form>
 </template>
 
 <script>
 import AWS from 'aws-sdk'
-import {nanoid} from 'nanoid'
+import { nanoid } from 'nanoid'
 import required from 'vuelidate/lib/validators/required'
 import NProgress from 'nprogress'
 
@@ -155,7 +139,7 @@ export default {
   },
   validations: {
     form: {
-      fileName: {required},
+      fileName: { required },
     },
   },
   computed: {
@@ -191,7 +175,7 @@ export default {
             foo: 'bar',
           },
         },
-        tags: [{Key: 'tag1', Value: 'value1'}],
+        tags: [{ Key: 'tag1', Value: 'value1' }],
       })
 
       var promise = upload.promise()
@@ -206,7 +190,7 @@ export default {
         this.selectedFile = null
       })
 
-      upload.on('httpUploadProgress', ({loaded, total}) => {
+      upload.on('httpUploadProgress', ({ loaded, total }) => {
         let progressPercentage = Math.round((loaded / total) * 100)
         decimal = parseFloat(progressPercentage) / 100.0
 

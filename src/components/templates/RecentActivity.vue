@@ -22,9 +22,7 @@
       </template>
 
       <article class="border rounded-lg shadow">
-        <section class="h-64 p-8">
-          Advocates (Completed Training)Content
-        </section>
+        <section class="h-64 p-8">Advocates (Completed Training)Content</section>
       </article>
     </OTabItem>
 
@@ -34,9 +32,7 @@
       </template>
 
       <article class="border rounded-lg shadow">
-        <section class="h-64 p-8">
-          New Volunteers (Completed Orientation) Content
-        </section>
+        <section class="h-64 p-8">New Volunteers (Completed Orientation) Content</section>
       </article>
     </OTabItem>
 
@@ -78,7 +74,7 @@ export default {
     return {
       courses: ['Parenting', 'Life Coaching', 'Therapy', 'CARE Teams'],
       activeTab: 1,
-      people: null,
+      users: null,
       isCardModalActive: false,
       isFullwidth: false,
       isImageModalActive: false,
@@ -90,19 +86,11 @@ export default {
   },
   async mounted() {
     try {
-      let response = await this.$axios.get('/people')
-      this.people = response.data
+      let response = await this.$axios.get('users')
+      this.users = response.data
     } catch (err) {
       console.log(err)
     }
-  },
-  computed: {
-    participantsTitle() {
-      return this.$t('participants')
-    },
-    coursesTitle() {
-      return this.$t('courses')
-    },
   },
 }
 </script>

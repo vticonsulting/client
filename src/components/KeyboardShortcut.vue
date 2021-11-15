@@ -1,10 +1,6 @@
 <template>
   <section>
-    <button
-      @click="handleShortkey"
-      v-shortkey.push="['shift', '?']"
-      @shortkey="handleShortkey"
-    >
+    <button @click="handleShortkey" v-shortkey.push="['shift', '?']" @shortkey="handleShortkey">
       <span class="shortcut-combo">
         <span class="shortcut">shift</span>
         <span class="shortcut-joiner">+</span>
@@ -15,6 +11,8 @@
 </template>
 
 <script>
+import HelpSheet from '@/components/HelpSheet'
+
 export default {
   created() {
     window.addEventListener('keydown', this.escapeListener)
@@ -23,7 +21,7 @@ export default {
   destroyed() {
     window.removeEventListener('keydown', this.escapeListener)
   },
-  data: function () {
+  data: function() {
     return {
       isHelpActive: false,
       message: '',
@@ -35,7 +33,12 @@ export default {
     handleShortkey() {
       this.show = !this.show
 
-      this.$oruga.modal.open('testing')
+      this.$oruga.modal.open({
+        parent: this,
+        component: HelpSheet,
+        custom: true,
+        trapFocus: true,
+      })
 
       console.log('...shortcut', this.show)
     },
@@ -92,5 +95,65 @@ export default {
   height: 18px;
   margin: 0 0.25em;
   padding: 0 2px 2px;
+}
+
+.modal-card {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+}
+@media screen and (min-width: 769px) {
+  .modal-card {
+    margin: 0 auto;
+    max-height: calc(100vh - 40px);
+    width: 640px;
+  }
+}
+.modal-card {
+  margin: 0 20px;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}
+.modal-card-foot,
+.modal-card-head {
+  align-items: center;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  padding: 20px;
+  position: relative;
+}
+.modal-card-head {
+  border-bottom: 1px solid #dbdbdb;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.modal-card-body {
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
+  padding: 20px;
+}
+.modal-card-foot {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 1px solid #dbdbdb;
+}
+.modal-card-title {
+  color: #363636;
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: 0;
+}
+.modal-card-foot .o-button:not(:last-child) {
+  margin-right: 0.5em;
 }
 </style>

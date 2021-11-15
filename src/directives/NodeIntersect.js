@@ -34,9 +34,8 @@ export default {
     setObserver(el, observer, onIntersect)
   },
   update(el, {value: newOptions}) {
-    const {observer: newObserver, onIntersect: newOnIntersect} = extractOptions(
-      newOptions,
-    )
+    const {observer: newObserver, onIntersect: newOnIntersect} =
+      extractOptions(newOptions)
     const oldObserver = el._intersectionObserver
     const isOldObserver = oldObserver instanceof IntersectionObserver
     const isNewObserver = newObserver instanceof IntersectionObserver

@@ -16,19 +16,12 @@
         Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
           From: "translate-x-0"
           To: "translate-x-full"
-      -->
+          -->
           <div class="w-screen max-w-md">
-            <div
-              class="flex flex-col h-full overflow-y-scroll bg-white shadow-xl"
-            >
+            <div class="flex flex-col h-full overflow-y-scroll bg-white shadow-xl">
               <div class="px-4 py-6 sm:px-6">
                 <div class="flex items-start justify-between">
-                  <h2
-                    id="slide-over-heading"
-                    class="text-lg font-medium text-gray-900"
-                  >
-                    Profile
-                  </h2>
+                  <h2 id="slide-over-heading" class="text-lg font-medium text-gray-900">Profile</h2>
                   <div class="flex items-center ml-3 h-7">
                     <button
                       class="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:ring-2 focus:ring-primary-500"
@@ -61,8 +54,8 @@
                     <div class="relative h-40 sm:h-56">
                       <img
                         class="absolute object-cover w-full h-full"
-                        src="/assets/img/people/charlee.jpg"
-                        alt=""
+                        src="/assets/img/users/charlee.jpg"
+                        alt
                       />
                     </div>
                     <div class="px-4 mt-6 sm:mt-8 sm:flex sm:items-end sm:px-6">
@@ -71,9 +64,7 @@
                           <div class="flex items-center">
                             <h3
                               class="text-xl font-bold text-gray-900 sm:text-2xl"
-                            >
-                              Charlee Tchividjian-Sherry
-                            </h3>
+                            >Charlee Tchividjian-Sherry</h3>
                             <span
                               class="ml-2.5 bg-green-400 flex-shrink-0 inline-block h-2 w-2 rounded-full"
                             >
@@ -82,21 +73,15 @@
                           </div>
                           <p class="text-sm text-gray-500">@charlee</p>
                         </div>
-                        <div
-                          class="flex flex-wrap mt-5 space-y-3 sm:space-y-0 sm:space-x-3"
-                        >
+                        <div class="flex flex-wrap mt-5 space-y-3 sm:space-y-0 sm:space-x-3">
                           <button
                             type="button"
                             class="inline-flex items-center justify-center flex-shrink-0 w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:flex-1"
-                          >
-                            Message
-                          </button>
+                          >Message</button>
                           <button
                             type="button"
                             class="inline-flex items-center justify-center flex-1 w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-                          >
-                            Call
-                          </button>
+                          >Call</button>
                           <span class="inline-flex ml-3 sm:ml-0">
                             <div class="relative inline-block text-left">
                               <button
@@ -128,7 +113,7 @@
                             Leaving: "transition ease-in duration-75"
                               From: "transform opacity-100 scale-100"
                               To: "transform opacity-0 scale-95"
-                          -->
+                              -->
                               <div
                                 class="absolute right-0 hidden w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"
                               >
@@ -142,14 +127,12 @@
                                     href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                     role="menuitem"
-                                    >View profile</a
-                                  >
+                                  >View profile</a>
                                   <a
                                     href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                     role="menuitem"
-                                    >Copy profile link</a
-                                  >
+                                  >Copy profile link</a>
                                 </div>
                               </div>
                             </div>
@@ -162,11 +145,7 @@
                 <div class="px-4 pt-5 pb-5 sm:px-0 sm:pt-0">
                   <dl class="px-4 space-y-8 sm:px-6 sm:space-y-6">
                     <div>
-                      <dt
-                        class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
-                      >
-                        Bio
-                      </dt>
+                      <dt class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">Bio</dt>
                       <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
                         <p>
                           Enim feugiat ut ipsum, neque ut. Tristique mi id
@@ -179,31 +158,19 @@
                     <div>
                       <dt
                         class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
-                      >
-                        Location
-                      </dt>
-                      <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
-                        New York, NY, USA
-                      </dd>
+                      >Location</dt>
+                      <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">New York, NY, USA</dd>
+                    </div>
+                    <div>
+                      <dt class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">Website</dt>
+                      <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">ashleyporter.com</dd>
                     </div>
                     <div>
                       <dt
                         class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
-                      >
-                        Website
-                      </dt>
+                      >Birthday</dt>
                       <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
-                        ashleyporter.com
-                      </dd>
-                    </div>
-                    <div>
-                      <dt
-                        class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0"
-                      >
-                        Birthday
-                      </dt>
-                      <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
-                        <time datetime="1988-06-23"> June 23, 1988 </time>
+                        <time datetime="1988-06-23">June 23, 1988</time>
                       </dd>
                     </div>
                   </dl>

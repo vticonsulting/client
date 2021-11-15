@@ -1,5 +1,5 @@
 <script>
-import {mixin as clickaway} from 'vue-clickaway'
+import { mixin as clickaway } from 'vue-clickaway'
 
 export default {
   mixins: [clickaway],
@@ -34,9 +34,9 @@ export default {
       <ol class="flex items-center space-x-4">
         <li>
           <div>
-            <RouterLink :to="{name: 'home'}">
+            <RouterLink :to="{ name: 'home' }">
               <BaseIconOutlined name="home" />
-              <span class="sr-only"> {{ $t('home') }} </span>
+              <span class="sr-only">{{ $t('home') }}</span>
             </RouterLink>
           </div>
         </li>
@@ -56,16 +56,14 @@ export default {
               />
             </svg>
             <RouterLink
-              :to="{name: 'dashboard'}"
+              :to="{ name: 'dashboard' }"
               class="ml-4 text-sm font-medium"
-            >
-              {{ $t('dashboard') }}
-            </RouterLink>
+            >{{ $t('dashboard') }}</RouterLink>
           </div>
         </li>
       </ol>
     </nav>
 
-    <QuickLinksButton />
+    <QuickLinksButton v-if="false" />
   </header>
 </template>

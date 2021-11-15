@@ -3,32 +3,24 @@
     <h3
       v-if="false"
       class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-50"
-    >
-      Last 30 days
-    </h3>
+    >Last 30 days</h3>
     <dl
-      class="grid grid-cols-1 overflow-hidden bg-white divide-y divide-gray-200 shadow dark:divide-gray-600 dark:bg-gray-700 lg:rounded-lg md:grid-cols-3 md:divide-y-0 md:divide-x"
+      class="grid grid-cols-1 overflow-hidden bg-white border divide-y divide-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:divide-gray-600 md:grid-cols-3 md:divide-y-0 md:divide-x"
     >
       <div>
         <div class="px-4 py-5 sm:p-6">
-          <dt class="text-base font-normal text-gray-900 dark:text-gray-50">
-            {{ $t('total_applicants') }}
-          </dt>
+          <dt class="text-base font-normal">Total Claims</dt>
           <dd class="flex items-baseline justify-between mt-1 md:block lg:flex">
-            <div
-              class="flex items-baseline text-2xl font-semibold text-primary-600"
-            >
+            <div class="flex items-baseline text-2xl font-semibold">
               71,897
-              <span class="ml-2 text-sm font-medium text-gray-500">
-                {{ $t('from') }} 70,946
-              </span>
+              <span class="ml-2 text-sm font-medium text-gray-500">{{ $t('from') }} 70,946</span>
             </div>
 
             <div
-              class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0"
+              class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-success-100 text-success-800 md:mt-2 lg:mt-0"
             >
               <svg
-                class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-green-500"
+                class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-success-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -39,7 +31,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="sr-only"> {{ $t('increased_by') }}</span>
+              <span class="sr-only">{{ $t('increased_by') }}</span>
               12%
             </div>
           </dd>
@@ -48,24 +40,20 @@
 
       <div>
         <div class="px-4 py-5 sm:p-6">
-          <dt class="text-base font-normal text-gray-900 dark:text-gray-50">
-            {{ $t('average_open_rate') }}
-          </dt>
+          <dt class="text-base font-normal">{{ $t('average_open_rate') }}</dt>
           <dd class="flex items-baseline justify-between mt-1 md:block lg:flex">
             <div
-              class="flex items-baseline text-2xl font-semibold text-primary-600"
+              class="flex items-baseline text-2xl font-semibold text-primary-600 dark:text-primary-200"
             >
               58.16%
-              <span class="ml-2 text-sm font-medium text-gray-500">
-                {{ $t('from') }} 56.14%
-              </span>
+              <span class="ml-2 text-sm font-medium text-gray-500">{{ $t('from') }} 56.14%</span>
             </div>
 
             <div
-              class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0"
+              class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-success-100 text-success-800 md:mt-2 lg:mt-0"
             >
               <svg
-                class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-green-500"
+                class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-success-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -76,7 +64,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="sr-only"> {{ $t('increased_by') }} </span>
+              <span class="sr-only">{{ $t('increased_by') }}</span>
               2.02%
             </div>
           </dd>
@@ -85,24 +73,22 @@
 
       <div>
         <div class="px-4 py-5 sm:p-6">
-          <dt class="text-base font-normal text-gray-900 dark:text-gray-50">
-            {{ $t('average_click_rate') }}
-          </dt>
+          <dt
+            class="text-base font-normal text-gray-900 dark:text-gray-50"
+          >{{ $t('average_click_rate') }}</dt>
           <dd class="flex items-baseline justify-between mt-1 md:block lg:flex">
             <div
-              class="flex items-baseline text-2xl font-semibold text-primary-600"
+              class="flex items-baseline text-2xl font-semibold text-primary-600 dark:text-primary-200"
             >
               24.57%
-              <span class="ml-2 text-sm font-medium text-gray-500">
-                {{ $t('from') }} 28.62%
-              </span>
+              <span class="ml-2 text-sm font-medium text-gray-500">{{ $t('from') }} 28.62%</span>
             </div>
 
             <div
-              class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0"
+              class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-danger-100 text-danger-800 md:mt-2 lg:mt-0"
             >
               <svg
-                class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-red-500"
+                class="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-danger-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -113,7 +99,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span class="sr-only"> {{ $t('decreased_by') }} </span>
+              <span class="sr-only">{{ $t('decreased_by') }}</span>
               4.05%
             </div>
           </dd>
